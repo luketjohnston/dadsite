@@ -1,0 +1,57 @@
+h1 {
+  font: 40px Tahoma;
+  text-align: center;
+}
+
+#gallery div {
+  max-width: 700px; 
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-gap: 40px;
+  justify-content: center;
+  justify-items: center;
+  grid-template-columns: 150px 150px 150px;
+}
+
+hr {
+  width: 570px;
+  margin: auto;
+}
+
+#fixed_width_img_deprec {
+  width: 150px;
+}
+
+img {
+  height: 200px;
+}
+
+#previous, #next {
+  background: grey;
+  padding: 3px;
+  border: 1px solid darkblue;
+  cursor: default;
+}
+
+#previous:hover, #next:hover {
+  background: yellow;
+}
+
+#links  {
+    display: flex;
+    justify-content: center;
+}
+
+#gallery_index  {
+    width: 530px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#links > a {
+    margin: 20px;
+}

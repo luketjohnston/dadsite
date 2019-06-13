@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!doctype html>
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/about.css'%}">
+    <title>Scott Johnston About</title>
+  </head>
+  <body>
+    <h1> About </h1>
+    <img src="{% static 'myapp/images/about_profile.jpg'%}"> </img>
+    <div id="about"> Scott Johnston received his BFA from Art Center College of Design in Pasadena, California, 
+        and has been a professional artist for over 30 years. His art hangs in numerous public and 
+        private collections. He is a member of the Portrait Society of America and Oil Painters of America.
+    </div>
+    <div id="quote">
+      <i> 
+      “It is art that makes life, makes interest, makes importance, and I know 
+      no substitute for the force and beauty of its process.” —Henry James </i>
+    </div>
+    <div id="links">
+      <a href="{%url 'home'%}"> Home </a>
+      <a href="{%url 'gallery'%}"> Gallery </a>
+      <a href="{%url 'about'%}"> About </a>
+    </div>
+  </body>
+</html>

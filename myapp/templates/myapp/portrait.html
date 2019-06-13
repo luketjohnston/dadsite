@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!doctype html>
+{% load static %}
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/portrait.css'%}">
+    <title{{title}}></title>
+  </head>
+  <body>
+    <img id='portrait' src="{{portrait.image.url}}"> </img>
+    <div id='description'> {{portrait.description}}</div>
+    <ul id='awards'> 
+      {% for award in awards %}
+      <li> 
+        {% if award.link %} <a href={{award.link}}> {% endif %}
+          {{award.description}} 
+        {% if award.link %} </a> {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
