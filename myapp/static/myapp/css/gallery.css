@@ -27,16 +27,16 @@ img {
   height: 200px;
 }
 
-#previous, #next {
-  background: grey;
-  padding: 3px;
-  border: 1px solid darkblue;
-  cursor: default;
-}
+//#previous, #next {
+  //background: grey;
+  //padding: 3px;
+  //border: 1px solid darkblue;
+  //cursor: default;
+//}
 
-#previous:hover, #next:hover {
-  background: yellow;
-}
+//#previous:hover, #next:hover {
+  //background: yellow;
+//}
 
 #links  {
     display: flex;
@@ -55,3 +55,6 @@ img {
 #links > a {
     margin: 20px;
 }
+
+
+

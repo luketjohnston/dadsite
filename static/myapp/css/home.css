@@ -1,0 +1,29 @@
+h1 {
+    font: 40px Minion;
+    text-align: center;
+}
+
+#slideshow {
+    position: relative; 
+    height: 500px;
+}
+
+#slideshow > div > img {
+    display: block; 
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#links  {
+    display: flex;
+    justify-content: center;
+}
+
+#links > a {
+    margin: 20px;
+}
+
+
+

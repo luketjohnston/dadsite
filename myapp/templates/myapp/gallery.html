@@ -2,10 +2,15 @@
 <!doctype html>
 {% load static %}
 {% load mathfilters %}
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html lang="en">
   <head>
-    
+    <!-- required for bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/gallery.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/all.css'%}">
     <title>Scott Johnston Portrait Gallery</title>
   </head>
   <body>
@@ -13,7 +18,10 @@
     <div id="gallery">
       <div id='galPage0' class='galPage'> 
         {% for portrait in portrait_list %}
-          <a href={% url 'portrait' portrait.identifier %}> <img src="{{portrait.image.url}}">  </img> </a>
+          <div class='container'>
+            <a href={% url 'portrait' portrait.identifier %}> <img src="{{portrait.image.url}}">  </img> </a>
+            <!-- <div class='overlay'> <div class='overlay_text'> {{portrait.overlay_text}} </div> </div> -->
+          </div>
           {% if forloop.counter|divisibleby:portraits_per_page %}
             </div> {# end previous galPage #}
             <div id='galPage{{forloop.counter|intdiv:portraits_per_page}}' class='galPage' style='display:none'>
@@ -24,16 +32,16 @@
     </div>
 
     <div id="gallery_index">
-      <div id="previous"> Previous Page </div> 
-      <div id="next"> Next Page </div> 
+      <div id="previous" class="clickable"> Previous Page </div> 
+      <div id="next" class="clickable"> Next Page </div> 
     </div>
 
     <hr>
 
     <div id="links">
-      <a href="{%url 'home'%}"> Home </a>
-      <a href="{%url 'gallery'%}"> Gallery </a>
-      <a href="{%url 'about'%}"> About </a>
+      <a class="nav_style" href="{%url 'home'%}"> Home </a>
+      <a class="nav_style" href="{%url 'gallery'%}"> Gallery </a>
+      <a class="nav_style" href="{%url 'about'%}"> About </a>
     </div>
   </body>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

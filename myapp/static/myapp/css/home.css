@@ -1,24 +1,16 @@
-body {
-  //background-color: darkblue;
-}
-
 h1 {
     font: 40px Minion;
     text-align: center;
 }
 
-#slideshow {
-    position: relative; 
-    height: 500px;
+.slick-slide {
+  height: 600px;
 }
 
-#slideshow > div > img {
-    display: block; 
-    height: 500px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+.slick-slide > img {
+  margin: auto;
 }
+
 
 #links  {
     display: flex;
@@ -28,6 +20,8 @@ h1 {
 #links > a {
     margin: 20px;
 }
+
+
 
 
 

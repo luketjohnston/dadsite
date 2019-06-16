@@ -8,6 +8,7 @@ class Portrait(models.Model):
   order = models.FloatField()
   # used in the path for the portrait page, 'gallery/<identifier>'
   identifier = models.CharField(max_length=200)
+  overlay_text = models.CharField(max_length=50)
 
 class Award(models.Model):
   portrait = models.ForeignKey(Portrait, on_delete=models.CASCADE)
