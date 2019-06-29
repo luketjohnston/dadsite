@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+< xml version="1.0" encoding="utf-8"?>
 <!doctype html>
 {% load static %}
 {% load mathfilters %}
@@ -17,7 +17,7 @@
     <h1> Gallery </h1>
     <div id="gallery">
         {% for portrait in portrait_list %}
-            <a href={% url 'portrait' portrait.identifier %}> <img src="{{portrait.image.url}}">  </img> </a>
+            <a style="display: none" href={% url 'portrait' portrait.identifier %}> <img src="{{portrait.image.url}}" >  </img> </a>
         {% endfor %}
     </div>
 

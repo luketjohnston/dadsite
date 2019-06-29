@@ -7,11 +7,23 @@
 //const imPerPage = 6;
 //var buildingPage;
 
+var imPerPage = 6; // gonna have to compute from window size at some point
+var firstVisiblePortrait = 0;
+
 
 // counts the number of pages for the gallery 
 //var galPageCount = document.getElementById("gallery").childElementCount;
 
 const galDiv = document.getElementById("gallery");
+const numPortraits = galDiv.children.length;
+
+// in gallery.html, set portraits display: none, so set the first imPerPage visible
+for (i=0; i < imPerPage; i++) {
+  galDiv.children[i].style.display = 'initial';
+}
+
+
+
 
 //$.ajax({
 //    url : folder,
@@ -35,45 +47,40 @@ var currentPage = 0;
 document.getElementById('previous').addEventListener("click", previousClick);
 document.getElementById('next').addEventListener("click", nextClick);
 
+
+
+
 function nextClick() {
-  incrementPage(1);
+  for (let i=0; i < imPerPage; i++) {
+    galDiv.children[firstVisiblePortrait].style.display = 'none';
+    firstVisiblePortrait++;
+    if (firstVisiblePortrait >= galDiv.children.length) {
+      firstVisiblePortrait = 0;
+      break; 
+    }
+  }
+  for (let i=0; i < imPerPage; i++) {
+    if (firstVisiblePortrait + i >= galDiv.children.length) { break; }
+    galDiv.children[firstVisiblePortrait + i].style.display = 'initial';
+  }
 }
+
 function previousClick() {
-  incrementPage(-1);
+  // TODO
+  for (let i=0; i < imPerPage; i++) {
+    galDiv.children[firstVisiblePortrait].style.display = 'none';
+    firstVisiblePortrait++;
+    if (firstVisiblePortrait >= galDiv.children.length) {
+      firstVisiblePortrait = 0;
+      break; 
+    }
+  }
+  for (let i=0; i < imPerPage; i++) {
+    if (firstVisiblePortrait + i >= galDiv.children.length) { break; }
+    galDiv.children[firstVisiblePortrait + i].style.display = 'initial';
+  }
+
 }
-function incrementPage(x) {
-  //TODO
-  //console.log(currentPage);
-  //document.getElementById('galPage' + currentPage).style.display = 'none';
-  //// just mod, but javascript mod returns negative for negative numbers,
-  //// so have to do this modification
-  //currentPage = (((currentPage + x) % galPageCount) + galPageCount) % galPageCount;
-  //document.getElementById('galPage' + currentPage).style.display = 'grid';
-}
-  
-
-
-//function galPage() {
-//  const page = document.createElement('div');
-//  page.setAttribute('id', 'galPage' + galPageCount);
-//  page.setAttribute('class', 'galPage');
-//  if (galPageCount !== 0) {
-//    page.style.display = 'none';
-//  }
-//  galPageCount += 1;
-//  return page;
-//}
-//
-//function portrait(src) {
-//  const img = document.createElement('img');
-//  img.setAttribute('src', src);
-//  const ref = document.createElement('a', );
-//  ref.setAttribute('href', src);
-//  ref.setAttribute('target', '_blank');
-//  ref.appendChild(img);
-//  return ref;
-//}
-
 
 Number.prototype.mod = function(n) {
     return ((this%n)+n)%n;
