@@ -9,7 +9,7 @@
 
 
 // counts the number of pages for the gallery 
-var galPageCount = document.getElementById("gallery").childElementCount;
+//var galPageCount = document.getElementById("gallery").childElementCount;
 
 const galDiv = document.getElementById("gallery");
 
@@ -42,12 +42,13 @@ function previousClick() {
   incrementPage(-1);
 }
 function incrementPage(x) {
-  console.log(currentPage);
-  document.getElementById('galPage' + currentPage).style.display = 'none';
-  // just mod, but javascript mod returns negative for negative numbers,
-  // so have to do this modification
-  currentPage = (((currentPage + x) % galPageCount) + galPageCount) % galPageCount;
-  document.getElementById('galPage' + currentPage).style.display = 'grid';
+  //TODO
+  //console.log(currentPage);
+  //document.getElementById('galPage' + currentPage).style.display = 'none';
+  //// just mod, but javascript mod returns negative for negative numbers,
+  //// so have to do this modification
+  //currentPage = (((currentPage + x) % galPageCount) + galPageCount) % galPageCount;
+  //document.getElementById('galPage' + currentPage).style.display = 'grid';
 }
   
 

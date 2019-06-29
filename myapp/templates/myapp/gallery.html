@@ -16,19 +16,9 @@
   <body>
     <h1> Gallery </h1>
     <div id="gallery">
-      <div id='galPage0' class='galPage'> 
         {% for portrait in portrait_list %}
-          <div class='container'>
             <a href={% url 'portrait' portrait.identifier %}> <img src="{{portrait.image.url}}">  </img> </a>
-            <!-- <div class='overlay'> <div class='overlay_text'> {{portrait.overlay_text}} </div> </div> -->
-          </div>
-          {% if forloop.counter|divisibleby:portraits_per_page %}
-            </div> {# end previous galPage #}
-            <div id='galPage{{forloop.counter|intdiv:portraits_per_page}}' class='galPage' style='display:none'>
-          {% endif %}
         {% endfor %}
-      </div> {# end last galPage #}
-      {# note that all galPages have display=none here. We set the visible one in the javascript file. #}
     </div>
 
     <div id="gallery_index">
