@@ -4,6 +4,16 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 
+h1 {
+    //font: 40px Minion;
+    text-align: center;
+}
+
+h1 img {
+  width: 100%;
+  max-width: 900px;
+}
+
 hr {
 	color: #999999;
 	background-color: #999999;

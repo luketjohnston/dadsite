@@ -1,11 +1,8 @@
-h1 {
-  font: 40px Tahoma;
-  text-align: center;
-}
 
 #gallery {
   // should be 6 times height;
-  width: 900px; 
+  width: 100%; 
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -21,12 +18,12 @@ hr {
 }
 
 
-img {
+#gallery img {
   // not sure why, but margins dont overlap with current setup;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: inline-block;
   height: 200px;
 }

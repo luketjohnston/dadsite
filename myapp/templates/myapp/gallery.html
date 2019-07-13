@@ -1,4 +1,4 @@
-< xml version="1.0" encoding="utf-8"?>
+<!xml version="1.0" encoding="utf-8"?>
 <!doctype html>
 {% load static %}
 {% load mathfilters %}
@@ -14,7 +14,9 @@
     <title>Scott Johnston Portrait Gallery</title>
   </head>
   <body>
-    <h1> Gallery </h1>
+    <h1> 
+      <img src="{% static 'myapp/images/title.png'%}"> </img>
+    </h1>
     <div id="gallery">
         {% for portrait in portrait_list %}
             <a href={% url 'portrait' portrait.identifier %}> <img src="{{portrait.image.url}}" >  </img> </a>
