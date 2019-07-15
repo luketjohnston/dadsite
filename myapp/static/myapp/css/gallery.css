@@ -1,6 +1,5 @@
 
 #gallery {
-  // should be 6 times height;
   width: 100%; 
   max-width: 700px;
   margin-left: auto;
@@ -13,7 +12,7 @@
 }
 
 hr {
-  width: 570px;
+  max-width: 570px;
   margin: auto;
 }
 
@@ -35,7 +34,7 @@ hr {
 }
 
 #gallery_index  {
-    width: 530px;
+    max-width: 530px;
     display: flex;
     justify-content: space-between;
     margin: 20px;
@@ -46,6 +45,26 @@ hr {
 #links > a {
     margin: 20px;
 }
+
+
+
+/* mobile in portrait mode */
+@media screen and (max-width: 400px) {
+  #gallery {
+    height: 65vh;
+  }
+  #gallery img {
+    height: auto;
+    max-width: 92%;
+    max-height: 100%;
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+}
+
+
+
+
 
 
 

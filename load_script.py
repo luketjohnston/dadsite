@@ -23,15 +23,128 @@ filenames = [
   'shinji-portrait-painter-scott-johnston-art-edgar-degas.jpg',
 ]
 
+short_ids = [
+  'Illston',
+  'Walker',
+  'Armstrong',
+  'Wilken',
+  'Siebert',
+  'Breyer',
+  'Chesney',
+  'Bush',
+  'Burcham',
+  'Family',
+  'Devine',
+  'Ware',
+  'Ray',
+  'Burdick',
+  'Shelby',
+  'Whyte',
+  'Eshima',
+]
+
+descriptions = [
+  'JUDGE SUSAN ILLSTON, UNITED STATES DISTRICT COURT,\nNORTHERN DISTRICT OF CALIFORNIA',
+  'JUDGE VAUGHN R WALKER, UNITED STATES DISTRICT COURT,\nNORTHERN DISTRICT OF CALIFORNIA',
+  'JUDGE SAUNDRA BROWN ARMSTRONG, UNITED STATES DISTRICT COURT,\nNORTHERN DISTRICT OF CALIFORNIA',
+  'JUDGE CLAUDIA WILKEN, UNITED STATES DISTRICT COURT,\nNORTHERN DISTRICT OF CALIFORNIA',
+  'ACTOR, DIRECTOR CHARLES SIEBERT',
+  'JUDGE CHARLES BREYER, UNITED STATES DISTRICT COURT,\nNORTHERN DISTRICT OF CALIFORNIA',
+  'JUDGE MAXINE CHESNEY, UNITED STATES DISTRICT COURT,\nNORTHERN DISTRICT OF CALIFORNIA',
+  'Scott_Johnston_Oil_Portrait_President_George_Bush.jpg',
+  'DAVID BURCHAM\nPRESIDENT, LOYOLA MARYMOUNT UNIVERSITY',
+  '',
+  'PETER DEVINE',
+  'JUDGE JAMES S. WARE, UNITED STATES DISTRICT COURT,\nNORTHERN DISTRICT OF CALIFORNIA',
+  'S. ALAN RAY\nPRESIDENT, ELMHURST COLLEGE',
+  'HUNT BURDICK',
+  'SHELBY LYNN',
+  'JUDGE RONALD WHYTE, UNITED STATES DISTRICT COURT,\nNORTHERN DISTRICT OF CALIFORNIA',
+  'SHINJI ESHIMA, BASSIST, COMPOSER,\nSF BALLET ORCHESTRA AND SF OPERA ORCHESTRA',
+]
 
 for i,f in enumerate(filenames):
   p = Portrait(
     identifier=f,
-    description='Test description',
+    description=descriptions[i],
     order=i,
+    myid = short_ids[i],
   )
   p.image.save(f, File(open('/Users/lukejohnston/Desktop/DadsWebsite/images/portraits/' + f, 'rb')))
   p.save()
+
+
+awards = []
+
+p = Portrait.get(id='Walker') 
+awards.append(
+  (p, 'Awarded third place, Portrait Society of America’s Members Only Competition, 2012',
+   'http://www.portraitsociety.org/'))
+awards.append(
+  (p, 'Featured in International Artist Magazine',
+   'http://www.international-artist.com/'))
+awards.append(
+  (p, 'Art Renewal Center Salon Finalist, 2013-14',
+   'http://artrenewal.org/pages/salon_winners.php?contest=2013-2014%20Salon&page=Figurative'))
+
+p = Portrait.get(id='Armstrong') 
+awards.append(
+  (p, 'Art Renewal Center Salon Finalist, 2016', 
+   'http://artrenewal.org/pages/salon_winners.php?contest=2013-2014%20Salon&page=Figurative'))
+
+p = Portrait.get(id='Wilken') 
+awards.append(
+  (p, 'Art Renewal Center Salon Finalist, 2016', 'http://artrenewal.org/pages/salon_winners.php?contest=2013-2014%20Salon&page=Figurative'))
+
+p = Portrait.get(id='Breyer')
+awards.append(
+  (p, 'Honors Award, Portrait Society of America’s Members Only Competition, 2013',
+   'http://www.portraitsociety.org/'))
+
+p = Portrait.get(id='Eshima')
+awards.append(
+  (p, 'Shinji Eshima with his Plumerel Bass, the very same instrument painted by Degas in L’Orchestre de l’Opera.', 'http://it.wikipedia.org/wiki/File:Degas_l%27orchestre.jpg'))
+awards.append(
+  (p, 'Read story here.', 'https://www.scottjohnstonportraits.com/images/ShinjiEshimaPlumerelBase_Article.pdf'))
+awards.append(
+  (p, 'Honors Award, Portrait Society of America’s Members Only Competition, 2014', 'http://www.portraitsociety.org/'))
+
+p = Portrait.get(id='Ray')
+awards.append(
+  (p, 'Finalist, Portrait Society of America\'s Members Only Competition, 2016', 'http://artrenewal.org/pages/salon_winners.php?contest=2013-2014%20Salon&page=Figurative'))
+
+p = Portrait.get(id='Devine')
+awards.append(
+  (p, 'Award Winner Ray Mar Art Contest 2014', 'https://www.scottjohnstonportraits.com/images/award-winner-scott-johnston.pdf'))
+awards.append(
+  (p, 'Honors Award, Portrait Society of America’s Members Only Competition, 2013', ''))
+awards.append(
+  (p, 'Honors Award, Oil Painters of America', 'http://opaonlineshowcase.com/winners/134'))
+awards.append(
+  (p, 'Art Renewal Center Salon Finalist, 2013-14', 'http://artrenewal.org/pages/salon_winners.php?contest=2013-2014%20Salon&page=Figurative'))
+
+p = Portrait.get(id='Chesney')
+awards.append(
+  (p, 'Honors Award, Portrait Society of America’s Members Only Competition, 2010', 'http://www.portraitsociety.org/'))
+
+p = Portrait.get(id='Shelby')
+awards.append(
+  (p, 'Ray Mar Art Contest Finalist', 'http://www.raymarartcontest.com/'))
+awards.append(
+  (p, 'Featured in International Artist Magazine', 'https://www.internationalartist.com/'))
+
+p = Portrait.get(id='Ware')
+awards.append(
+  (p, 'Honors Award, Portrait Society of America’s Members Only Competition, 2012', ''))
+
+
+for a in awards:
+  mya = Award(portrait = a[0], description = a[1], link = a[2])
+  mya.save()
+
+  
+  
+
 
 
 

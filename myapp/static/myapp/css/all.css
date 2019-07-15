@@ -5,37 +5,54 @@ body {
 }
 
 h1 {
-    //font: 40px Minion;
-    text-align: center;
+  //font: 40px Minion;
+  text-align: center;
+}
+
+#viewnote {
+  display: none;
 }
 
 h1 img {
   width: 100%;
-  max-width: 900px;
+  max-width: 700px;
 }
 
 hr {
-	color: #999999;
-	background-color: #999999;
-    height: 2px;
-    border: none;
+  color: #999999;
+  background-color: #999999;
+  height: 2px;
+  border: none;
 }
 
 
 a:link {
-	color: #999999;
-	text-decoration: none;
+  color: #999999;
+  text-decoration: none;
 }
 .clickable:hover {
-	text-decoration: none;
-	color: #FFFFFF;
+  text-decoration: none;
+  color: #FFFFFF;
 }
 a:visited {
-	text-decoration: none;
-	color: #999999;
+  text-decoration: none;
+  color: #999999;
 }
 a:hover {
-	text-decoration: none;
-	color: #FFFFFF;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+/* mobile in landscape mode */
+@media screen and (max-height: 400px) {
+  #viewnote {
+    display: initial;
+    text-align: center;
+    display: block;
+    font-style: italic;
+    max-width: 92%;
+    max-height: 100%;
+    margin-left: 4%;
+    margin-right: 4%;
+  }
 }
 

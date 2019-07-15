@@ -1,12 +1,13 @@
 
 .slick-slide {
-  height: 600px;
+  //height: 600px;
+  height: calc(100vh - (0.14745308311 * 700px) - 60px);
 }
 
 .slick-slide > img {
   margin: auto;
+  height: calc(100vh - (0.14745308311 * 700px) - 60px);
 }
-
 
 #links  {
     display: flex;
