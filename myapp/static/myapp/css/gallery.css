@@ -28,11 +28,6 @@ hr {
 }
 
 
-#links  {
-    display: flex;
-    justify-content: center;
-}
-
 #gallery_index  {
     max-width: 530px;
     display: flex;
@@ -42,23 +37,22 @@ hr {
     margin-right: auto;
 }
 
-#links > a {
-    margin: 20px;
-}
-
-
-
 /* mobile in portrait mode */
 @media screen and (max-width: 400px) {
   #gallery {
     height: 65vh;
   }
-  #gallery img {
+  #gallery a {
+    display: block;
+    height: 65vh;
+  }
+  #gallery a img {
     height: auto;
     max-width: 92%;
     max-height: 100%;
     margin-left: 4%;
     margin-right: 4%;
+
   }
 }
 

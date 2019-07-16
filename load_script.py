@@ -1,5 +1,6 @@
 from django.core.files import File
 from myapp.models import Portrait
+from myapp.models import Award
 
 # populates all portraits, does not add any awards.
 
@@ -51,7 +52,7 @@ descriptions = [
   'ACTOR, DIRECTOR CHARLES SIEBERT',
   'JUDGE CHARLES BREYER, UNITED STATES DISTRICT COURT,\nNORTHERN DISTRICT OF CALIFORNIA',
   'JUDGE MAXINE CHESNEY, UNITED STATES DISTRICT COURT,\nNORTHERN DISTRICT OF CALIFORNIA',
-  'Scott_Johnston_Oil_Portrait_President_George_Bush.jpg',
+  'PRESIDENT GEORGE H.W. BUSH\nCOLLECTION BOHEMIAN CLUB, SAN FRANCISCO',
   'DAVID BURCHAM\nPRESIDENT, LOYOLA MARYMOUNT UNIVERSITY',
   '',
   'PETER DEVINE',
@@ -70,13 +71,13 @@ for i,f in enumerate(filenames):
     order=i,
     myid = short_ids[i],
   )
-  p.image.save(f, File(open('/Users/lukejohnston/Desktop/DadsWebsite/images/portraits/' + f, 'rb')))
+  p.image.save(f, File(open('/Users/lukejohnston/Desktop/dadsite/images/portraits/' + f, 'rb')))
   p.save()
 
 
 awards = []
 
-p = Portrait.get(id='Walker') 
+p = Portrait.objects.get(myid='Walker') 
 awards.append(
   (p, 'Awarded third place, Portrait Society of America’s Members Only Competition, 2012',
    'http://www.portraitsociety.org/'))
@@ -87,21 +88,21 @@ awards.append(
   (p, 'Art Renewal Center Salon Finalist, 2013-14',
    'http://artrenewal.org/pages/salon_winners.php?contest=2013-2014%20Salon&page=Figurative'))
 
-p = Portrait.get(id='Armstrong') 
+p = Portrait.objects.get(myid='Armstrong') 
 awards.append(
   (p, 'Art Renewal Center Salon Finalist, 2016', 
    'http://artrenewal.org/pages/salon_winners.php?contest=2013-2014%20Salon&page=Figurative'))
 
-p = Portrait.get(id='Wilken') 
+p = Portrait.objects.get(myid='Wilken') 
 awards.append(
   (p, 'Art Renewal Center Salon Finalist, 2016', 'http://artrenewal.org/pages/salon_winners.php?contest=2013-2014%20Salon&page=Figurative'))
 
-p = Portrait.get(id='Breyer')
+p = Portrait.objects.get(myid='Breyer')
 awards.append(
   (p, 'Honors Award, Portrait Society of America’s Members Only Competition, 2013',
    'http://www.portraitsociety.org/'))
 
-p = Portrait.get(id='Eshima')
+p = Portrait.objects.get(myid='Eshima')
 awards.append(
   (p, 'Shinji Eshima with his Plumerel Bass, the very same instrument painted by Degas in L’Orchestre de l’Opera.', 'http://it.wikipedia.org/wiki/File:Degas_l%27orchestre.jpg'))
 awards.append(
@@ -109,11 +110,11 @@ awards.append(
 awards.append(
   (p, 'Honors Award, Portrait Society of America’s Members Only Competition, 2014', 'http://www.portraitsociety.org/'))
 
-p = Portrait.get(id='Ray')
+p = Portrait.objects.get(myid='Ray')
 awards.append(
   (p, 'Finalist, Portrait Society of America\'s Members Only Competition, 2016', 'http://artrenewal.org/pages/salon_winners.php?contest=2013-2014%20Salon&page=Figurative'))
 
-p = Portrait.get(id='Devine')
+p = Portrait.objects.get(myid='Devine')
 awards.append(
   (p, 'Award Winner Ray Mar Art Contest 2014', 'https://www.scottjohnstonportraits.com/images/award-winner-scott-johnston.pdf'))
 awards.append(
@@ -123,17 +124,17 @@ awards.append(
 awards.append(
   (p, 'Art Renewal Center Salon Finalist, 2013-14', 'http://artrenewal.org/pages/salon_winners.php?contest=2013-2014%20Salon&page=Figurative'))
 
-p = Portrait.get(id='Chesney')
+p = Portrait.objects.get(myid='Chesney')
 awards.append(
   (p, 'Honors Award, Portrait Society of America’s Members Only Competition, 2010', 'http://www.portraitsociety.org/'))
 
-p = Portrait.get(id='Shelby')
+p = Portrait.objects.get(myid='Shelby')
 awards.append(
   (p, 'Ray Mar Art Contest Finalist', 'http://www.raymarartcontest.com/'))
 awards.append(
   (p, 'Featured in International Artist Magazine', 'https://www.internationalartist.com/'))
 
-p = Portrait.get(id='Ware')
+p = Portrait.objects.get(myid='Ware')
 awards.append(
   (p, 'Honors Award, Portrait Society of America’s Members Only Competition, 2012', ''))
 

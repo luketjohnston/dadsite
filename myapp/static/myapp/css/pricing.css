@@ -1,31 +1,26 @@
 
-
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  
 }
 
-#about {
+h2 {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+#process {
+  align: 'center';
   margin: auto;
   margin-top: 20px;
   max-width: 500px;
   text-align: justify;
   text-justify: inter-word;
 }
-
-#quote {
-  margin: auto;
-  margin-top: 20px;
-  max-width: 500px;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
 
 @media screen and (max-width: 400px) {
-  #about, #quote  {
+  #process, h2  {
     margin-left: 4%;
     margin-right: 4%;
   }

@@ -42,6 +42,16 @@ a:hover {
   text-decoration: none;
   color: #FFFFFF;
 }
+
+#links  {
+    display: flex;
+    justify-content: center;
+}
+
+#links > a {
+    margin: 20px;
+}
+
 /* mobile in landscape mode */
 @media screen and (max-height: 400px) {
   #viewnote {
