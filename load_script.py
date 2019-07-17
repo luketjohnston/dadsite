@@ -71,7 +71,7 @@ for i,f in enumerate(filenames):
     order=i,
     myid = short_ids[i],
   )
-  p.image.save(f, File(open('/Users/lukejohnston/Desktop/dadsite/images/portraits/' + f, 'rb')))
+  p.image.save(f, File(open('/var/www/html/dadsite/images/portraits/' + f, 'rb')))
   p.save()
 
 
