@@ -67,6 +67,7 @@ descriptions = [
 for i,f in enumerate(filenames):
   p = Portrait(
     identifier=f,
+    staticurl='myapp/images/' + f,
     description=descriptions[i],
     order=i,
     myid = short_ids[i],

@@ -20,7 +20,7 @@
     <div id="viewnote"> For a better viewing experience, please turn phone to portrait mode, or resize browser window. </div>
     <div id="gallery">
         {% for portrait in portrait_list %}
-            <a href={% url 'portrait' portrait.identifier %}> <img src="{{portrait.image.url}}" >  </img> </a>
+            <a href={% url 'portrait' portrait.identifier %}> <img src="{{ portrait.image.url }}" >  </img> </a>
         {% endfor %}
     </div>
 
