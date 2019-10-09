@@ -4,13 +4,16 @@ import os
 # Create your models here.
 class Portrait(models.Model):
   description = models.CharField(max_length=200)
-  image = models.ImageField(upload_to='myapp/images/')
+  image = models.ImageField(upload_to='media/')
   order = models.FloatField()
   # used in the path for the portrait page, 'gallery/<identifier>'
   identifier = models.CharField(max_length=200)
   overlay_text = models.CharField(max_length=50)
   # used to "get()" portraits in load_script.py
   myid = models.CharField(max_length=20)
+  staticurl = models.CharField(max_length=200)
+    
+
 
 class Award(models.Model):
   portrait = models.ForeignKey(Portrait, on_delete=models.CASCADE)

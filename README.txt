@@ -10,6 +10,7 @@ python3 manage.py createsuperuser
 (standard password, no mark)
 
 pip3 install django-mathfilters
+pip3 install pillow
 
 
 username to login to admin page: 'admin'
