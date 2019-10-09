@@ -1,5 +1,6 @@
 
 #gallery {
+  position: relative; 
   width: 100%; 
   max-width: 700px;
   margin-left: auto;
@@ -10,6 +11,7 @@
   overflow: hidden;
   display: block;
 }
+
 
 hr {
   max-width: 570px;
