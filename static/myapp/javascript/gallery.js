@@ -1,83 +1,65 @@
 
-//var folder = "images/portraits";
+var firstVisiblePortrait = 0;
 
-// Counts the number of portraits we have loaded
-//var imCount = 0;
-// number of portraits per page
-//const imPerPage = 6;
-//var buildingPage;
-
-
-// counts the number of pages for the gallery 
-var galPageCount = document.getElementById("gallery").childElementCount;
 
 const galDiv = document.getElementById("gallery");
-
-//$.ajax({
-//    url : folder,
-//    success: function (data) {
-//        $(data).find("a").attr("href", function (i, val) {
-//            if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-//                imCount += 1;
-//                if (imCount % imPerPage === 1) {
-//                  // make new page
-//                  buildingPage = galPage();
-//                  galDiv.appendChild(buildingPage);
-//                }
-//                buildingPage.appendChild(portrait(val));
-//            } 
-//        });
-//    }
-//});
+const numPortraits = galDiv.children.length;
 
 var currentPage = 0;
 
 document.getElementById('previous').addEventListener("click", previousClick);
 document.getElementById('next').addEventListener("click", nextClick);
 
+
+
+
 function nextClick() {
-  incrementPage(1);
+  // first, determine viewing mode:
+  display_mode = $(window).width() > 400 ? 'initial' : 'block';
+
+  let i = 0;
+  // determine what portrait will be the first on the next page
+  while (i < numPortraits && (galDiv.children[i].offsetTop < galDiv.offsetHeight || 
+      galDiv.children[i].style.display === 'none')) { 
+    i++; 
+  }
+
+  if (i === numPortraits) {
+    // go back to beginning, set all portraits visible again
+    for (i = 0; i < numPortraits; i++) {
+      galDiv.children[i].style.display = display_mode;
+    }
+    return;
+  }
+  for (let x=0; x < i; x++) {
+    galDiv.children[x].style.display = 'none';
+  }
 }
+
 function previousClick() {
-  incrementPage(-1);
-}
-function incrementPage(x) {
-  console.log(currentPage);
-  document.getElementById('galPage' + currentPage).style.display = 'none';
-  // just mod, but javascript mod returns negative for negative numbers,
-  // so have to do this modification
-  currentPage = (((currentPage + x) % galPageCount) + galPageCount) % galPageCount;
-  document.getElementById('galPage' + currentPage).style.display = 'grid';
-}
-  
+  // This is non-obvious to implement, but turns out pretty simple. We just
+  //  iterate backward through the children, setting their display to 'block'
+  // or 'initial', depending on whether we are viewing on mobile or not,
+  //  until the previous first visible portrait is no longer visible.
 
-
-//function galPage() {
-//  const page = document.createElement('div');
-//  page.setAttribute('id', 'galPage' + galPageCount);
-//  page.setAttribute('class', 'galPage');
-//  if (galPageCount !== 0) {
-//    page.style.display = 'none';
-//  }
-//  galPageCount += 1;
-//  return page;
-//}
-//
-//function portrait(src) {
-//  const img = document.createElement('img');
-//  img.setAttribute('src', src);
-//  const ref = document.createElement('a', );
-//  ref.setAttribute('href', src);
-//  ref.setAttribute('target', '_blank');
-//  ref.appendChild(img);
-//  return ref;
-//}
+  // first, determine viewing mode:
+  display_mode = $(window).width() > 400 ? 'initial' : 'block';
+  var i = 0; 
+  while (galDiv.children[i].style.display === 'none') {
+    i++;
+  }
+  let firstVisiblePortraitI = i;
+  if (i === 0) {return;}
+  while (galDiv.children[firstVisiblePortraitI].offsetTop < galDiv.offsetHeight) {
+    i--;
+    galDiv.children[i].style.display = display_mode;
+  }
+}
 
 
 Number.prototype.mod = function(n) {
     return ((this%n)+n)%n;
 };
-
 
 
 

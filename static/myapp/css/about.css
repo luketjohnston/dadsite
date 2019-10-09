@@ -1,8 +1,4 @@
 
-h1 {
-  font: 40px Tahoma;
-  text-align: center;
-}
 
 img {
   display: block;
@@ -14,7 +10,7 @@ img {
 #about {
   margin: auto;
   margin-top: 20px;
-  width: 500px;
+  max-width: 500px;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -22,16 +18,15 @@ img {
 #quote {
   margin: auto;
   margin-top: 20px;
-  width: 500px;
+  max-width: 500px;
   text-align: justify;
   text-justify: inter-word;
 }
 
-#links  {
-    display: flex;
-    justify-content: center;
-}
 
-#links > a {
-    margin: 20px;
+@media screen and (max-width: 400px) {
+  #about, #quote  {
+    margin-left: 4%;
+    margin-right: 4%;
+  }
 }
