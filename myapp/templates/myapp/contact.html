@@ -7,22 +7,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/contact.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/all.css'%}">
-    <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/portrait.css'%}">
-    <title{{title}}></title>
+    <title>Scott Johnston Contact</title>
   </head>
   <body>
-    <img id='portrait' src="{{portrait.image.url}}"> </img>
-    <div id='description'> {{portrait.description}}</div>
-    <ul id='awards'> 
-      {% for award in awards %}
-      <li> 
-        {% if award.link %} <a href={{award.link}}> {% endif %}
-          {{award.description}} 
-        {% if award.link %} </a> {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
+    <h1> 
+      <img src="{% static 'myapp/images/title.png'%}"> </img>
+    </h1>
+    <div id="phone"> 
+      Studio: 925-256-6700
+    </div>
+    <div id="email">
+      email: scottwjohnston@comcast.net
+    </div>
     <div id="links">
       <div id='menu'> Menu </div>
       <a href="{%url 'home'%}"> Home </a>
@@ -31,6 +30,6 @@
       <a href="{%url 'pricing'%}"> Process & Fees </a>
       <a href="{%url 'contact'%}"> Contact</a>
     </div>
-  <script src="{% static 'myapp/javascript/all.js'%}"></script>
   </body>
+  <script src="{% static 'myapp/javascript/all.js'%}"></script>
 </html>

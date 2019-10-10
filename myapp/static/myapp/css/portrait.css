@@ -1,9 +1,30 @@
 #portrait {
-  width: 100%;
+  display: block;
+  margin: auto;
+  padding: 20px;
+  height: 100vh;
+  width: auto;
 }
 
 #description {
   text-align: center;
 }
+
+/* mobile in portrait mode */
+@media screen and (max-width: 400px) {
+  #portrait {
+    display: block;
+    width: 100vw;
+    height: auto;
+    padding: 20px;
+  }
+}
+
+
+
+
+
+
+
 
 

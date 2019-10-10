@@ -49,7 +49,48 @@ a:hover {
 }
 
 #links > a {
+    display: initial;
     margin: 20px;
+}
+
+#menu {
+    display: none;
+}
+
+
+/* note: for some reason, after settings links display = none with javascript, 
+   resizing the window doesn't revert their display
+   
+
+/* mobile in portrait mode */
+@media screen and (max-width: 400px) {
+  #links {
+    margin: 20px;
+    display: initial;
+  }
+  #menu {
+    display: block;
+    background: #999999;
+    color: black;
+    width: 100vw - 10px;
+    padding: 7px 8px;
+    margin-top: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 1px;
+  }
+
+  #links a {
+    display: none;
+    background: #999999;
+    color: black;
+    width: 100vw - 10px;
+    padding: 7px 8px;
+    margin-top: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 1px;
+  }
 }
 
 /* mobile in landscape mode */
@@ -65,4 +106,5 @@ a:hover {
     margin-right: 4%;
   }
 }
+
 
