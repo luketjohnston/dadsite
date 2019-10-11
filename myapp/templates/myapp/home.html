@@ -43,7 +43,7 @@
       <div class='slideshow slick-slider'>
         {% for portrait in portrait_list %}
           <div class='slick-slide'>
-            <img src="{{portrait.image.url}}" >  </img>
+            <span class='helper'></span><img src="{{portrait.image.url}}"></img>
           </div>
         {% endfor %}
       </div>
@@ -56,6 +56,10 @@
       <a href="{%url 'pricing'%}"> Process & Fees </a>
       <a href="{%url 'contact'%}"> Contact</a>
     </div>
+
+    <footer>
+      <small>&copy; Copyright 2019, Oil Portrait Artist Scott Johnston </small>
+    </footer>
   </body>
   
   <script src="{% static 'myapp/javascript/all.js'%}"></script>

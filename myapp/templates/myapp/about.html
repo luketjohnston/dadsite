@@ -16,10 +16,12 @@
     <h1> 
       <img src="{% static 'myapp/images/title.png'%}"> </img>
     </h1>
-    <img src="{% static 'myapp/images/about_profile.jpg'%}"> </img>
-    <div id="about"> Scott Johnston received his BFA from Art Center College of Design in Pasadena, California, 
-        and has been a professional artist for over 30 years. His art hangs in numerous public and 
-        private collections. He is a member of the Portrait Society of America and Oil Painters of America.
+    <div id="about"> 
+        <img id='about_profile' src="{% static 'myapp/images/about_profile.jpg'%}"> </img>
+        Scott Johnston received his BFA from Art Center College of Design in Pasadena, 
+        California, and has been a professional artist for over 30 years. His art 
+        hangs in numerous public and private collections. He is a member of the 
+        Portrait Society of America and Oil Painters of America.
     </div>
     <div id="quote">
       <i> 
@@ -34,6 +36,9 @@
       <a href="{%url 'pricing'%}"> Process & Fees </a>
       <a href="{%url 'contact'%}"> Contact</a>
     </div>
+    <footer>
+      <small>&copy; Copyright 2019, Oil Portrait Artist Scott Johnston </small>
+    </footer>
   <script src="{% static 'myapp/javascript/all.js'%}"></script>
   </body>
 </html>
