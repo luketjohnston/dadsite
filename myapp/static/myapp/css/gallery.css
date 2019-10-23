@@ -12,6 +12,13 @@
   display: block;
 }
 
+#next {
+  margin: 10px;
+}
+#previous {
+  margin: 10px;
+}
+
 
 hr {
   max-width: 570px;

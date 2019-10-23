@@ -45,14 +45,26 @@ a:hover {
 }
 
 #links  {
+    font-size: 0.8em;
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
 }
 
 #links > a {
     display: initial;
     margin: 20px;
+}
+
+#icons  {
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+#icons > a {
+    margin-left: 10px;
+    margin-right: 10px;
 }
  
 footer {

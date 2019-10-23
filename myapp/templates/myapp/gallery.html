@@ -25,19 +25,24 @@
     </div>
 
     <div id="gallery_index">
-      <div id="previous" class="clickable"> <b> < </b> </div> 
-      <div id="next" class="clickable"> <b> > </b> </div> 
+      <div id="previous" class="clickable"> 
+        <img src="{%static 'myapp/images/previous1.png'%}" 
+             onmouseover="this.src='{%static 'myapp/images/previous2.png'%}'"
+             onmouseout="this.src='{%static 'myapp/images/previous1.png'%}'"></img> 
+      </div> 
+      <div id="next" class="clickable"> 
+        <img src="{%static 'myapp/images/next1.png'%}" 
+             onmouseover="this.src='{%static 'myapp/images/next2.png'%}'"
+             onmouseout="this.src='{%static 'myapp/images/next1.png'%}'"></img> 
+      </div> 
     </div>
 
-    <hr>
-
     <div id="links">
-      <div id='menu'> Menu </div>
-      <a href="{%url 'home'%}"> Home </a>
-      <a href="{%url 'gallery'%}"> Gallery </a>
-      <a href="{%url 'about'%}"> About </a>
-      <a href="{%url 'pricing'%}"> Process & Fees </a>
-      <a href="{%url 'contact'%}"> Contact</a>
+      <div id='menu'> MENU </div>
+      <a href="{%url 'home'%}"> HOME </a>
+      <a href="{%url 'gallery'%}"> GALLERY </a>
+      <a href="{%url 'about'%}"> ABOUT </a>
+      <a href="{%url 'pricing'%}"> CONTACT & FEES </a>
     </div>
     <footer>
       <small>&copy; Copyright 2019, Oil Portrait Artist Scott Johnston </small>

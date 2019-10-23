@@ -2,12 +2,26 @@
   display: block;
   margin: auto;
   padding: 20px;
-  height: 100vh;
+  max-height: calc(100vh - 100px);
   width: auto;
 }
 
+#textDiv {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+}
+
 #description {
+  margin: auto;
+  padding-bottom: 5px;
   text-align: center;
+  font-size: 0.7em;
+}
+
+#awards {
+  margin: auto;
+  font-size: 0.7em;
 }
 
 /* mobile in portrait mode */

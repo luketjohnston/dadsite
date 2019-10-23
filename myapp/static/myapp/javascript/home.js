@@ -18,9 +18,9 @@
 $(document).ready(function() {
   $('.slideshow').slick({
     infinite: true,
-    speed: 2000,
+    speed: 3800,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3500,
     pauseOnFocus: false,
     pauseOnHover: false,
     arrows: false,
