@@ -76,6 +76,13 @@ footer {
     display: none;
 }
 
+#menu:hover {
+  text-decoration: none;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+
 #overlay {
   display: none;
   height: 100%;
