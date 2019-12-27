@@ -1,20 +1,25 @@
 
-.slick-slide {
-  //height: 600px;
+.myslideshow {
+  height: calc(100vh - (0.14745308311 * 700px) - 60px);
+  position: relative;
+}
+
+.myslide {
   height: calc(100vh - (0.14745308311 * 700px) - 60px);
   width: 100vw;
   text-align: center;
   white-space: nowrap;
+  position: absolute;
 }
 
-.helper {
+.slidespan {
   display: inline-block;
   height: 100%;
   vertical-align: middle;
 }
 
 
-.slick-slide > img {
+.myslide > img {
   display: inline-block;
   vertical-align: middle;
   max-width: 100%;
