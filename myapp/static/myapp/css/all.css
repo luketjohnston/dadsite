@@ -59,6 +59,7 @@ a:hover {
     font-size: 0.8em;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 
@@ -91,8 +92,14 @@ footer {
 #overlay > a {
   display: block;
   margin: auto;
-  padding: 20px;
+  padding-bottom: 30px;
   font-size: 1.5em;
+  text-align: center;
+}
+
+.closebtn {
+  padding-top: 30px;
+  padding-right: 30px;
 }
 
 #overlay > .closebtn {

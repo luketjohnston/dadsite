@@ -26,7 +26,7 @@ hr {
 }
 
 
-#gallery img {
+#gallery > a > img {
   // not sure why, but margins dont overlap with current setup;
   margin-left: 20px;
   margin-right: 20px;
@@ -40,7 +40,7 @@ hr {
 #gallery_index  {
     max-width: 530px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -48,20 +48,23 @@ hr {
 
 /* mobile in portrait mode */
 @media screen and (max-width: 400px) {
+  .arrow {
+    display: none;
+  }
   #gallery {
-    height: 65vh;
+    height: auto;
   }
-  #gallery a {
+  #gallery > a {
     display: block;
-    height: 65vh;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
-  #gallery a img {
+  #gallery > a > img {
     height: auto;
     max-width: 92%;
     max-height: 100%;
     margin-left: 4%;
     margin-right: 4%;
-
   }
 }
 
