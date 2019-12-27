@@ -14,9 +14,15 @@
 
 #next {
   margin: 10px;
+  margin-left: 30px;
+  position: relative;
+  top: 2px;
+  
 }
 #previous {
   margin: 10px;
+  margin-right: 30px;
+  position: relative;
 }
 
 
