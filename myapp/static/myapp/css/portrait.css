@@ -25,7 +25,7 @@
 }
 
 /* mobile in portrait mode */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 481px) {
   #portrait {
     display: block;
     width: 100vw;

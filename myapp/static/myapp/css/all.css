@@ -122,7 +122,7 @@ footer {
    
 
 /* mobile in portrait mode */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 481px) {
   #menu {
     display: initial;
     margin: 20px;
@@ -134,7 +134,7 @@ footer {
 }
 
 /* mobile in landscape mode */
-@media screen and (max-height: 400px) {
+@media screen and (max-height: 481px) {
   #viewnote {
     display: initial;
     text-align: center;

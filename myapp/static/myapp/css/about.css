@@ -29,7 +29,7 @@ img {
 }
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 481px) {
   #about, #quote  {
     margin-left: 4%;
     margin-right: 4%;
