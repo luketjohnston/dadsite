@@ -1,6 +1,7 @@
 body {
   background-color: #000000;
   color: #999999;
+  color: #cdb9b0;
   font-family: "Times New Roman", Times, serif;
 }
 
@@ -21,14 +22,20 @@ h1 img {
 
 hr {
   color: #999999;
+  color: #cdb9b0;
   background-color: #999999;
   height: 2px;
   border: none;
 }
 
+a {
+  outline: 0;
+}
+
 
 a:link {
   color: #999999;
+  color: #cdb9b0;
   text-decoration: none;
 }
 .clickable:hover {
@@ -38,6 +45,7 @@ a:link {
 a:visited {
   text-decoration: none;
   color: #999999;
+  color: #cdb9b0;
 }
 a:hover {
   text-decoration: none;
@@ -95,13 +103,20 @@ footer {
   overflow-x: hidden; /* Disable horizontal scroll */
 }
 
+#overlay_inner {
+  padding: 60px;
+}
 
-#overlay > a {
+#overlay_inner > a {
   display: block;
   margin: auto;
-  padding-bottom: 30px;
-  font-size: 1.5em;
+  padding-top: 30px;
+  font-size: 1.2em;
   text-align: center;
+}
+
+#overlay_inner > .icons {
+  padding-top: 60px;
 }
 
 .closebtn {
@@ -130,6 +145,10 @@ footer {
 
   #links a {
     display: none;
+  }
+
+  .icons  {
+    font-size: 1.1em;
   }
 }
 

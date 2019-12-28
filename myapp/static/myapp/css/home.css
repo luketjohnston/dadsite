@@ -10,6 +10,7 @@
   text-align: center;
   white-space: nowrap;
   position: absolute;
+  display: none;
 }
 
 .slidespan {
