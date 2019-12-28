@@ -8,12 +8,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script src="{% static 'myapp/javascript/home.js'%}"></script>
 
     <link rel="stylesheet" type="text/css" href="{% static 'myapp/slick/slick.css'%}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'myapp/slick/slick-theme.css'%}"/>
+    <script src="https://kit.fontawesome.com/a4739ba9d6.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{% static 'myapp/slick/slick.min.js'%}"></script>
 
     <title>Scott Johnston Portraits</title>
@@ -27,33 +28,82 @@
     </h1>
     <div id="viewnote"> For a better viewing experience, please turn phone to portrait mode, or resize browser window. </div>
 
-    <!-- bootstrap carousel didn't look that great so I switched to slick
-    <div id='myCarousel' class="carousel slide carousel-fade" data-interval="500" data-ride="carousel" data-pause="false">
-      <div class='carousel-inner'>
-        {% for portrait in portrait_list %}
-          <div class='carousel-item{% if forloop.first %} active{% endif %}'>
-	  <img class='d-block' src="{{portrait.image.url}}">  </img>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-    -->
-
+    <!-- removing slick slideshow, it doesn't resize well
     <div class='slideshow-container'>
       <div class='slideshow slick-slider'>
         {% for portrait in portrait_list %}
           <div class='slick-slide'>
-            <img src="{{portrait.image.url}}" >  </img>
+            <span class='slidespan'></span><img src="{{portrait.image.url}}"></img>
           </div>
         {% endfor %}
       </div>
     <div>
-    <div id="links">
-      <a href="{%url 'home'%}"> Home </a>
-      <a href="{%url 'gallery'%}"> Gallery </a>
-      <a href="{%url 'about'%}"> About </a>
-      <a href="{%url 'pricing'%}"> Process & Fees </a>
+    -->
+
+    <div class='myslideshow'>
+      {% for portrait in portrait_list %}
+        <div class='myslide'>
+          <span class='slidespan'></span><img src="{{portrait.image.url}}"></img>
+        </div>
+      {% endfor %}
     </div>
+
+    <div id="links">
+      <div id='menu' onclick="openNav()"> MENU </div>
+      <a href="{%url 'home'%}"> HOME </a>
+      <a href="{%url 'gallery'%}"> GALLERY </a>
+      <a href="{%url 'about'%}"> ABOUT </a>
+      <a href="{%url 'pricing'%}"> CONTACT & FEES </a>
+    </div>
+    <div class="icons">
+      <a href="https://www.instagram.com/portraitartistswj/">
+        <i class="fab fa-instagram"> </i>
+      </a>
+      <a href="https://www.pinterest.com/NicePortraits/scott-wallace-johnston/">
+        <i class="fab fa-pinterest"> </i>
+      </a>
+      <a href="mailto:scottwjohnston@comcast.net">
+        <i class="far fa-envelope"> </i>
+      </a>
+      <a href="https://www.facebook.com">
+        <i class="fab fa-facebook"> </i>
+      </a>
+      <a href="https://www.twitter.com">
+        <i class="fab fa-twitter"> </i>
+      </a>
+    </div>
+    
+    <div id="overlay">
+      <a href="javascript:void(0)" class="closebtn fas fa-times" onclick="closeNav()"></a>
+      <a href="{%url 'home'%}"> HOME </a>
+      <a href="{%url 'gallery'%}"> GALLERY </a>
+      <a href="{%url 'about'%}"> ABOUT </a>
+      <a href="{%url 'pricing'%}"> CONTACT & FEES </a>
+      <div class='icons'>
+        <a href="https://www.instagram.com/portraitartistswj/">
+          <i class="fab fa-instagram"> </i>
+        </a>
+        <a href="https://www.pinterest.com/NicePortraits/scott-wallace-johnston/">
+          <i class="fab fa-pinterest"> </i>
+        </a>
+        <a href="mailto:scottwjohnston@comcast.net">
+          <i class="far fa-envelope"> </i>
+        </a>
+        <a href="https://www.facebook.com">
+          <i class="fab fa-facebook"> </i>
+        </a>
+        <a href="https://www.twitter.com">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </div>
+    </div>
+      
+
+
+    <footer>
+      <small>&copy; Copyright 2019, Oil Portrait Artist Scott Johnston </small>
+    </footer>
   </body>
   
+  <script src="{% static 'myapp/javascript/all.js'%}"></script>
 </html>

@@ -1,12 +1,31 @@
 
-.slick-slide {
-  //height: 600px;
+.myslideshow {
   height: calc(100vh - (0.14745308311 * 700px) - 60px);
+  position: relative;
 }
 
-.slick-slide > img {
-  margin: auto;
+.myslide {
   height: calc(100vh - (0.14745308311 * 700px) - 60px);
+  width: 100vw;
+  text-align: center;
+  white-space: nowrap;
+  position: absolute;
+}
+
+.slidespan {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+
+.myslide > img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  max-height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 

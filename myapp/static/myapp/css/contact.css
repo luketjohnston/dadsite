@@ -1,22 +1,8 @@
-
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-h2 {
-  margin-top: 20px;
-  font-size: 18px;
-}
-
-#process {
-  align: 'center';
-  margin: auto;
-  margin-top: 20px;
-  max-width: 500px;
-  text-align: justify;
-  text-justify: inter-word;
+  
 }
 
 #phone {
@@ -32,9 +18,8 @@ h2 {
   margin: auto;
 }
 
+
+
+
 @media screen and (max-width: 400px) {
-  #process, h2  {
-    margin-left: 4%;
-    margin-right: 4%;
-  }
 }

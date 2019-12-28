@@ -19,7 +19,7 @@ function nextClick() {
 
   let i = 0;
   // determine what portrait will be the first on the next page
-  while (i < numPortraits && (galDiv.children[i].offsetTop < galDiv.offsetHeight || 
+  while (i < numPortraits && (galDiv.children[i].children[0].offsetTop < galDiv.offsetHeight || 
       galDiv.children[i].style.display === 'none')) { 
     i++; 
   }

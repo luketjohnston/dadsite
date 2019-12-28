@@ -18,6 +18,9 @@ def about(request):
 def pricing(request):
   return render(request, 'myapp/pricing.html', {})
 
+def contact(request):
+  return render(request, 'myapp/contact.html', {})
+
 def portrait(request, portrait_id):
   portrait = Portrait.objects.get(identifier=portrait_id)
   awards = portrait.award_set.all() # award_set just works, defined with many-to-one relationship

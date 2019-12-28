@@ -14,6 +14,7 @@ h1 {
 }
 
 h1 img {
+  padding: 20px;
   width: 100%;
   max-width: 700px;
 }
@@ -44,12 +45,92 @@ a:hover {
 }
 
 #links  {
+    font-size: 0.8em;
     display: flex;
     justify-content: center;
 }
 
 #links > a {
+    display: initial;
     margin: 20px;
+}
+
+.icons  {
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.icons > a {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+ 
+footer {
+    text-align: center;
+}
+
+#menu {
+    display: none;
+}
+
+#menu:hover {
+  text-decoration: none;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+
+#overlay {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1; /* sit at top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+
+#overlay > a {
+  display: block;
+  margin: auto;
+  padding-bottom: 30px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.closebtn {
+  padding-top: 30px;
+  padding-right: 30px;
+}
+
+#overlay > .closebtn {
+  text-align: right;
+}
+  
+
+
+
+
+/* note: for some reason, after settings links display = none with javascript, 
+   resizing the window doesn't revert their display
+   
+
+/* mobile in portrait mode */
+@media screen and (max-width: 400px) {
+  #menu {
+    display: initial;
+    margin: 20px;
+  }
+
+  #links a {
+    display: none;
+  }
 }
 
 /* mobile in landscape mode */
@@ -65,4 +146,5 @@ a:hover {
     margin-right: 4%;
   }
 }
+
 

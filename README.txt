@@ -17,8 +17,15 @@ username to login to admin page: 'admin'
 password: Standard without mark
 
 to clear and reload the database:
-python manage.py flush
-python manage.py shell
+python3 manage.py flush
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py shell
 THEN, 
 import load_script.py
 from the shell
+
+
+
+TODO
+comment out urls.py settings that aren't necessary for production

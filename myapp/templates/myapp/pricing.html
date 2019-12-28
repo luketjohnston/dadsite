@@ -10,6 +10,8 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/all.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/pricing.css'%}">
+    <script src="https://kit.fontawesome.com/a4739ba9d6.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
     <title>Scott Johnston About</title>
   </head>
   <body>
@@ -39,13 +41,69 @@
 
       <p> Completion time varies, depending on artist’s schedule and complexity of job. </p>
 
-      <p> FEES start at $20,000.  </p>
+      <p> FEES start at $28,000.  </p>
+
+      <div id="phone"> 
+        <b> Studio:  </b> 925-256-6700
+      </div>
+      <div id="email">
+
+      <b> Email: </b> 
+      <a href="mailto:scottwjohnston@comcast.net"> scottwjohnston@comcast.net </a>
+    </div>
     </div>
     <div id="links">
-      <a href="{%url 'home'%}"> Home </a>
-      <a href="{%url 'gallery'%}"> Gallery </a>
-      <a href="{%url 'about'%}"> About </a>
-      <a href="{%url 'pricing'%}"> Process & Fees </a>
+      <div id='menu' onclick="openNav()"> MENU </div>
+      <a href="{%url 'home'%}"> HOME </a>
+      <a href="{%url 'gallery'%}"> GALLERY </a>
+      <a href="{%url 'about'%}"> ABOUT </a>
+      <a href="{%url 'pricing'%}"> CONTACT & FEES </a>
     </div>
+    <div class="icons">
+      <a href="https://www.instagram.com/portraitartistswj/">
+        <i class="fab fa-instagram"> </i>
+      </a>
+      <a href="https://www.pinterest.com/NicePortraits/scott-wallace-johnston/">
+        <i class="fab fa-pinterest"> </i>
+      </a>
+      <a href="mailto:scottwjohnston@comcast.net">
+        <i class="far fa-envelope"> </i>
+      </a>
+      <a href="https://www.facebook.com">
+        <i class="fab fa-facebook"> </i>
+      </a>
+      <a href="https://www.twitter.com">
+        <i class="fab fa-twitter"> </i>
+      </a>
+    </div>
+    
+    <div id="overlay">
+      <a href="javascript:void(0)" class="closebtn fas fa-times" onclick="closeNav()"></a>
+      <a href="{%url 'home'%}"> HOME </a>
+      <a href="{%url 'gallery'%}"> GALLERY </a>
+      <a href="{%url 'about'%}"> ABOUT </a>
+      <a href="{%url 'pricing'%}"> CONTACT & FEES </a>
+      <div class='icons'>
+        <a href="https://www.instagram.com/portraitartistswj/">
+          <i class="fab fa-instagram"> </i>
+        </a>
+        <a href="https://www.pinterest.com/NicePortraits/scott-wallace-johnston/">
+          <i class="fab fa-pinterest"> </i>
+        </a>
+        <a href="mailto:scottwjohnston@comcast.net">
+          <i class="far fa-envelope"> </i>
+        </a>
+        <a href="https://www.facebook.com">
+          <i class="fab fa-facebook"> </i>
+        </a>
+        <a href="https://www.twitter.com">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </div>
+    </div>
+    <footer>
+      <small>&copy; Copyright 2019, Oil Portrait Artist Scott Johnston </small>
+    </footer>
   </body>
+  <script src="{% static 'myapp/javascript/all.js'%}"></script>
 </html>
