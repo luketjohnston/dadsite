@@ -29,6 +29,26 @@
       </ul>
       -->
     </div>
+
+    <div id="gallery_index">
+      <div id="previous" class="arrow clickable"> 
+        <a href={% url 'portrait' prev_id %}> 
+          <img src="{%static 'myapp/images/previous1.png'%}"
+               onmouseover="this.src='{%static 'myapp/images/previous2.png'%}'"
+               onmouseout="this.src='{%static 'myapp/images/previous1.png'%}'"></img> 
+        </a>
+      </div> 
+      <div id="next" class="arrow clickable"> 
+        <a href={% url 'portrait' next_id %}> 
+          <img src="{%static 'myapp/images/next1.png'%}"
+               onmouseover="this.src='{%static 'myapp/images/next2.png'%}'"
+               onmouseout="this.src='{%static 'myapp/images/next1.png'%}'"></img> 
+        </a>
+      </div> 
+    </div>
+  
+
+  
     <div id="links">
       <div id='menu' onclick="openNav()"> MENU </div>
       <a href="{%url 'home'%}"> HOME </a>
@@ -62,7 +82,7 @@
         <a href="{%url 'home'%}"> HOME </a>
         <a href="{%url 'gallery'%}"> GALLERY </a>
         <a href="{%url 'about'%}"> ABOUT </a>
-        <a href="{%url 'pricing'%}"> PRICING & FEES </a>
+        <a href="{%url 'pricing'%}"> PROCESS & FEES </a>
         <a href="{%url 'pricing'%}#phone"> CONTACT </a>
         <a href="javascript:void(0)" onclick="closeNav()"> BACK</a>
         <div class='icons'>

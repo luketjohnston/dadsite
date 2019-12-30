@@ -19,9 +19,9 @@ var startedShow = false;
 
 function doSlideshow() {
   if (startedShow) {
-    slides.eq(currentSlide).fadeOut(4000);
+    slides.eq(currentSlide).fadeTo(4000, 0);
   }
-  slides.eq(nextSlide).fadeIn(4000, waitInBetweenSlides);
+  slides.eq(nextSlide).fadeTo(4000, 1, waitInBetweenSlides);
   currentSlide = nextSlide;
   nextSlide = (currentSlide + 1) % totalSlides;
 }
@@ -33,7 +33,6 @@ function waitInBetweenSlides() {
 
 $(document).ready(function(){
   slides = $( ".myslide" );
-  slides.hide();
   totalSlides = slides.length;
   doSlideshow();
   startedShow = true;

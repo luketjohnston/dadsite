@@ -5,7 +5,8 @@ import os
 class Portrait(models.Model):
   description = models.CharField(max_length=200)
   image = models.ImageField(upload_to='media/')
-  order = models.FloatField()
+  gallery_order = models.FloatField()
+  slideshow_order = models.FloatField()
   # used in the path for the portrait page, 'gallery/<identifier>'
   identifier = models.CharField(max_length=200)
   overlay_text = models.CharField(max_length=50)
