@@ -14,20 +14,24 @@
     <title{{title}}></title>
   </head>
   <body>
-    <img id='portrait' src="{{portrait.image.url}}"> </img>
-    <div id='textDiv'>
-      <div id='description'> {{portrait.description}}</div>
-      <!-- 
-      <ul id='awards'> 
-        {% for award in awards %}
-        <li> 
-          {% if award.link %} <a href={{award.link}}> {% endif %}
-            {{award.description}} 
-          {% if award.link %} </a> {% endif %}
-        </li> 
-        {% endfor %}
-      </ul>
-      -->
+    <div id='outerContainer'>
+    <div id='portraitContainer'>
+      <img id='portrait' src="{{portrait.image.url}}"> </img>
+      <div id='textDiv'>
+        <div id='description'> {{portrait.description}}</div>
+        <!-- 
+        <ul id='awards'> 
+          {% for award in awards %}
+          <li> 
+            {% if award.link %} <a href={{award.link}}> {% endif %}
+              {{award.description}} 
+            {% if award.link %} </a> {% endif %}
+          </li> 
+          {% endfor %}
+        </ul>
+        -->
+      </div>
+    </div>
     </div>
 
     <div id="gallery_index">
