@@ -62,6 +62,13 @@
   .mobile_box_container {
     display: inline;
   }
+
+  .myslideshow {
+    height: calc(100vh - (0.14745308311 * 480px * 2) - 80px);
+  }
+  .myslide {
+    height: calc(100vh - (0.14745308311 * 480px * 2) - 80px);
+  }
 }
 
 
