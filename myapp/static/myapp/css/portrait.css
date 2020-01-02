@@ -55,10 +55,26 @@
 @media screen and (max-width: 481px) {
   #portrait {
     display: block;
-    max-width: 100vw;
+    max-width: 100%;
+    max-height: calc(100vh - 50px - 22px);
     height: auto;
     padding: 20px;
     padding-top: 20px;
+  }
+
+  #outerContainer {
+    height: calc(100vh - 50px);
+    position: relative;
+  }
+
+  #portraitContainer {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #gallery_index {
+    margin: 0;
   }
 }
 
