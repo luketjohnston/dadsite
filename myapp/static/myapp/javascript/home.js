@@ -1,16 +1,6 @@
 
 'use strict';
 
-// slick slideshow!
-//$(document).ready(function() {
-//  $('.slideshow').slick({
-//    speed: 3800,
-//    autoplaySpeed: 3500,
-//    cssEase: 'linear'
-//  });
-//});
-
-
 var slides;
 var totalSlides;
 var currentSlide;
