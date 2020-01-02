@@ -1,6 +1,7 @@
 
 .myslideshow {
   height: calc(100vh - (0.14745308311 * 700px) - 60px);
+  max-height: 620px;
   width: 100vw;
   position: relative;
 }
