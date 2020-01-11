@@ -8,6 +8,11 @@ body {
 h1 {
   //font: 40px Minion;
   text-align: center;
+  /* first parenthesis is the height of the slideshow */
+  /* fraction multiplier is smallest width/height ratio of portraits in slideshow */
+  /* 35px is to compensate for padding of h1 img (see below) */
+  max-width: calc((100vh - (0.14745308311 * 480px * 2) - 60px) * (500 / 755) + 35px);
+  margin: auto;
 }
 
 #viewnote {
