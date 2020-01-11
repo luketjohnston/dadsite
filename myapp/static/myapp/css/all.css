@@ -8,6 +8,11 @@ body {
 h1 {
   //font: 40px Minion;
   text-align: center;
+  /* first parenthesis is the height of the slideshow */
+  /* fraction multiplier is smallest width/height ratio of portraits in slideshow */
+  /* 35px is to compensate for padding of h1 img (see below) */
+  max-width: calc((100vh - (0.14745308311 * 480px * 2) - 40px) * (500 / 755) + 35px);
+  margin: auto;
 }
 
 #viewnote {
@@ -60,7 +65,10 @@ a:hover {
 
 #links > a {
     display: initial;
-    margin: 20px;
+    margin-left: 13px;
+    margin-right: 13px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .icons  {
@@ -154,6 +162,7 @@ footer {
 
 /* mobile in landscape mode */
 @media screen and (max-height: 481px) {
+  /*
   #viewnote {
     display: initial;
     text-align: center;
@@ -164,6 +173,7 @@ footer {
     margin-left: 4%;
     margin-right: 4%;
   }
+  */
 }
 
 
