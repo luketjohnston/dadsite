@@ -5,6 +5,8 @@ var x = window.matchMedia("(min-width: 482px) and (min-height: 701px)")
 x.addListener(linksInitial) // Attach listener function on state changes
 var y = window.matchMedia("(max-width: 481px)")
 y.addListener(linksNone) // Attach listener function on state changes
+var z = window.matchMedia("(max-height: 700px)")
+z.addListener(linksNone) // Attach listener function on state changes
 
 
 
