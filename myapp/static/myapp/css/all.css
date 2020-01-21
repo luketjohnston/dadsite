@@ -1,6 +1,5 @@
 body {
   background-color: #000000;
-  color: #999999;
   color: #cdb9b0;
   font-family: "Times New Roman", Times, serif;
 }
@@ -12,6 +11,7 @@ h1 {
   /* fraction multiplier is smallest width/height ratio of portraits in slideshow */
   /* 35px is to compensate for padding of h1 img (see below) */
   max-width: calc((100vh - (0.14745308311 * 480px * 2) - 40px) * (500 / 755) + 35px);
+  min-width: 300px;
   margin: auto;
 }
 
@@ -26,7 +26,6 @@ h1 img {
 }
 
 hr {
-  color: #999999;
   color: #cdb9b0;
   background-color: #999999;
   height: 2px;
@@ -55,6 +54,18 @@ a:visited {
 a:hover {
   text-decoration: none;
   color: #FFFFFF;
+}
+
+svg {
+  height: 12px;
+  width: 12px;
+  position: relative;
+  top: -12%;
+  fill: #cdb9b0;
+}
+
+svg:hover {
+  fill: #FFFFFF;
 }
 
 #links  {
@@ -158,6 +169,14 @@ footer {
   .icons  {
     font-size: 1.1em;
   }
+
+  svg {
+    height: 16.5px;
+    width: 16.5px;
+    position: relative;
+    top: -10%;
+  }
+    
 }
 
 /* mobile in landscape mode */
