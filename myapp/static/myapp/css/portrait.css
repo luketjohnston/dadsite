@@ -1,10 +1,37 @@
+#outerContainer {
+  /* height will be reset with javascript, but this one works ok */
+  height: calc(100vh - 70px);
+  width: 100%;
+  max-height: 750px;
+  min-height: 400px;
+  min-width: 300px;
+}
+
 #portrait {
   display: block;
+  max-width: 100%;
+  max-height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
   margin: auto;
-  padding: 20px;
-  padding-top: 40px;
-  max-height: calc(100vh - 100px);
-  width: auto;
+
+  /* will set max-height in javascript so that it does not push the description 
+     out of the container div */
+}
+
+
+#container1 {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* this display type makes div shrinkwrap to content */
+  display: inline-block;
+}
+
+#textDiv {
+  margin: auto;
 }
 
 #gallery_index  {
@@ -29,9 +56,6 @@
   position: relative;
 }
 
-#textDiv {
-  margin: auto;
-}
 
 
 /* min-height is 22 so that this takes up space even when there is no description.
@@ -67,11 +91,13 @@
     position: relative;
   }
 
+  /*
   #portraitContainer {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
   }
+  */
 
   #gallery_index {
     margin: 0;
