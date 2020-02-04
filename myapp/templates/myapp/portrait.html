@@ -14,40 +14,50 @@
     <title{{title}}></title>
   </head>
   <body>
+
     <h1> 
       <img src="{% static 'myapp/images/title.png'%}"> </img>
     </h1>
     <div class='myslideshow'>
-      <div class='myslide'>
-        <img class='slideimg' id='portrait' src="{{portrait.image.url}}"> </img>
-      </div>
+      {% for portrait in portraits %}
+        <div class='myslide {{portrait.myid}}' data-myid={{portrait.myid}}>
+          <img class='slideimg' src="{{portrait.image.url}}"></img>
+        </div>
+      {% endfor %}
     </div>
 
     <div id='textDiv'>
-      <div id='description'> {{portrait.description}}</div>
-      <!-- 
-      <ul id='awards'> 
-        {% for award in awards %}
-        <li> 
-          {% if award.link %} <a href={{award.link}}> {% endif %}
-            {{award.description}} 
-          {% if award.link %} </a> {% endif %}
-        </li> 
-        {% endfor %}
-      </ul>
+      {% for portrait in portraits %}
+        <div class="description {{portrait.myid}}"> {{portrait.description}}</div>
+        <!-- AWARDS ARE WAY OUT OF DATE, REMOVED EARLY 
+        <ul id='awards'> 
+          {% for award in awards %}
+          <li> 
+            {% if award.link %} <a href={{award.link}}> {% endif %}
+              {{award.description}} 
+            {% if award.link %} </a> {% endif %}
+          </li> 
+          {% endfor %}
+        </ul>
       -->
+        
+        
+      {% endfor %}
+
     </div>
 
     <div id="gallery_index">
-      <div id="previous" class="arrow clickable"> 
-        <a href={% url 'portrait' prev_id %}> 
+      <div id="previous" class="arrow clickable" data-url={% url 'portrait'%}> 
+        <!-- will set href with hash using javascript-->
+        <span onclick="prevClick()"> 
           <img src="{%static 'myapp/images/previous1.png'%}"
                onmouseover="this.src='{%static 'myapp/images/previous2.png'%}'"
                onmouseout="this.src='{%static 'myapp/images/previous1.png'%}'"></img> 
         </a>
       </div> 
       <div id="next" class="arrow clickable"> 
-        <a href={% url 'portrait' next_id %}> 
+        <!-- will set href with hash using javascript-->
+        <span onclick="nextClick()"> 
           <img src="{%static 'myapp/images/next1.png'%}"
                onmouseover="this.src='{%static 'myapp/images/next2.png'%}'"
                onmouseout="this.src='{%static 'myapp/images/next1.png'%}'"></img> 

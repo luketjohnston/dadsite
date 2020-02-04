@@ -20,6 +20,7 @@ html {
   min-width: 300px;
   position: absolute;
   top: 0;
+  opacity: 0;
 }
 
 .slideimg {
@@ -61,6 +62,8 @@ h1 {
 
 h1 img {
   padding: 20px;
+  /* It's not centered without this adjustment? maybe image doesn't have text centered */
+  padding-left: 21px;
   width: 100%;
   max-width: 490px;
 }
@@ -201,6 +204,10 @@ footer {
   #menu {
     display: initial;
     margin: 20px;
+  }
+
+  svg {
+    top: -15%;
   }
 
   .myslideshow {

@@ -24,7 +24,7 @@
     </div>
     <div id="gallery">
         {% for portrait in portrait_list %}
-            <a href={% url 'portrait' portrait.identifier %}> <img src="{{ portrait.image.url }}" >  </img> </a>
+            <a href="{% url 'portrait' %}#{{portrait.myid}}"> <img src="{{ portrait.image.url }}" >  </img> </a>
         {% endfor %}
     </div>
 
