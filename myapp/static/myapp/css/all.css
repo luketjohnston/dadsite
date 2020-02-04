@@ -50,7 +50,7 @@ h1 {
   /* first parenthesis is the height of the slideshow */
   /* fraction multiplier is smallest width/height ratio of portraits in slideshow */
   /* 35px is to compensate for padding of h1 img (see below) */
-  max-width: calc((100vh - (0.14745308311 * 480px * 2) - 40px) * (500 / 755) + 35px);
+  max-width: calc((100vh - 240px) * (500 / 755));
   min-width: 280px;
   margin: auto;
 }
