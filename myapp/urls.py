@@ -10,9 +10,8 @@ urlpatterns = [
   path('about', views.about, name='about'),
   path('pricing', views.pricing, name='pricing'),
   path('contact', views.contact, name='contact'),
-  path('gallery/<str:portrait_id>', views.portrait, name='portrait'),
-] + static('myapp/images', document_root='myapp/images') + static('gallery/myapp/images', document_root='myapp/images') #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
+  path('portrait', views.portrait, name='portrait'),
+] + static('myapp/images', document_root='myapp/images') + static('gallery/myapp/images', document_root='myapp/images')# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # last two lines are so that static images are served from myapp/images when requested
 # from either myapp/images or gallery/myapp/images.

@@ -66,6 +66,7 @@ hr {
     margin-top: 10px;
   }
   #gallery > a > img {
+    display: initial;
     height: auto;
     max-width: 92%;
     max-height: 100%;

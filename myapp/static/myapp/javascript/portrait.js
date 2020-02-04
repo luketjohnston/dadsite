@@ -1,33 +1,76 @@
-resizeWindow();
+// first get the portrait from the hash
 
-window.addEventListener("resize", resizeWindow);
+var hash = window.location.hash.substr(1);
 
-function resizeWindow() {
+var visibleElements;
+var nextHash;
+var prevHash;
 
-  // calculate outerContainer height based on description height and 
-  // arrows height
-  var outerContainer = $("#outerContainer");
-  var descriptionHeight = $("#textDiv").outerHeight(true);
-  var arrowsHeight = $("#gallery_index").outerHeight(true);
-  var str = 'calc(100vh - ' + arrowsHeight.toString() + 'px' + ')';
-  outerContainer.height(str);
+
+$(document).ready(function() {
+
+  var maxDescriptionHeight = maxHeight($('.description'));
+  $('#textDiv').height(maxDescriptionHeight);
+  update();
+});
+
+// taken from stack exchange answer https://stackoverflow.com/questions/6060992/element-with-the-max-height-from-a-set-of-elements
+function maxHeight(elems){
+    return Math.max.apply(null, elems.map(function ()
+    {
+        return $(this).height();
+    }).get());
+}
+
+
+function nextClick() {
+  if(nextHash) {
+    visibleElements.css('opacity', 0);
+    hash = nextHash;
+    console.log(window.location.hash);
+    update();
+    window.location.hash = '#' + hash;
+  }
+}
+
+function prevClick() {
+  if(prevHash) {
+    visibleElements.css('opacity', 0);
+    hash = prevHash;
+    console.log(window.location.hash);
+    update();
+    window.location.hash = '#' + hash;
+  }
+}
+
+function update() {
+
+  visibleElements = $("." + $.escapeSelector(hash));
   
+  visibleElements.css('opacity', 1);
+  
+  nextHash = visibleElements.first().next().data('myid');
+  prevHash = visibleElements.first().prev().data('myid');
 
-  // calculate image max-height based on description height
-  var containerHeight = $("#outerContainer").outerHeight(true);
-  var portrait = $("#portrait");
-  var maxH = containerHeight - descriptionHeight;
-  var maxH_str = maxH.toString() + 'px';
+  if(!nextHash) {
+    $("#next").css('visibility', 'hidden');
+  } else {
+    $("#next").css('visibility', 'initial');
+  }
+  
+  if(!prevHash) {
+    $("#previous").css('visibility', 'hidden');
+  } else {
+    $("#previous").css('visibility', 'initial');
+  }
 
-  portrait.css('max-height', maxH_str);
-
-  //var portraitContainer = $("#portraitContainer");
-  //portraitContainer.css("top", "50%");
-  //portraitContainer.css("left", "50%");
-  //portraitContainer.css("transform", "translate(-50%, -50%)");
-
+  var urlBase = $("#previous").data('url');
+  $("#previous a").attr("href", urlBase + '#' + prevHash);
+  $("#next a").attr("href", urlBase + '#' + nextHash);
 
 }
+
+  
 
 
 

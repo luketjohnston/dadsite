@@ -1,74 +1,53 @@
-#outerContainer {
-  /* height will be reset with javascript, but this one works ok */
-  height: calc(100vh - 70px);
-  width: 100%;
-  max-height: 750px;
-  min-height: 400px;
-  min-width: 300px;
-}
-
-#portrait {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  margin: auto;
-
-  /* will set max-height in javascript so that it does not push the description 
-     out of the container div */
-}
-
-
-#container1 {
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  /* this display type makes div shrinkwrap to content */
-  display: inline-block;
-}
 
 #textDiv {
+  width: 100vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+}
+
+/* min-height is 22 so that this takes up space even when there is no description.
+   (that's the height if there was one line */
+.description {
+  position: absolute;
+  top: 0;
   margin: auto;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 0.7em;
+  opacity: 0;
 }
 
 #gallery_index  {
     max-width: 530px;
     display: flex;
     justify-content: center;
-    margin: 20px;
+    margin-top: 35px;
+    margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
 }
 
 #next {
-  margin: 10px;
+  margin-right: 10px;
   margin-left: 30px;
   position: relative;
   top: 2px;
   
 }
+
 #previous {
-  margin: 10px;
+  margin-left: 10px;
   margin-right: 30px;
   position: relative;
 }
 
 
 
-/* min-height is 22 so that this takes up space even when there is no description.
-   (that's the height if there was one line */
-#description {
-  margin: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 5px;
-  text-align: center;
-  font-size: 0.7em;
-  min-height: 22px;
-}
 
 #awards {
   margin: auto;
@@ -77,31 +56,6 @@
 
 /* mobile in portrait mode */
 @media screen and (max-width: 481px) {
-  #portrait {
-    display: block;
-    max-width: 100%;
-    max-height: calc(100vh - 50px - 22px);
-    height: auto;
-    padding: 20px;
-    padding-top: 20px;
-  }
-
-  #outerContainer {
-    height: calc(100vh - 50px);
-    position: relative;
-  }
-
-  /*
-  #portraitContainer {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  */
-
-  #gallery_index {
-    margin: 0;
-  }
 }
 
 

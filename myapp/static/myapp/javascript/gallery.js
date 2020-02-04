@@ -10,6 +10,17 @@ var currentPage = 0;
 document.getElementById('previous').addEventListener("click", previousClick);
 document.getElementById('next').addEventListener("click", nextClick);
 
+var y = window.matchMedia("(max-width: 481px)")
+y.addListener(displayAllImages) // Attach listener function on state changes
+
+function displayAllImages(x) {
+  if (x.matches) {
+    for (let k=0; k < numPortraits; k++) {
+      galDiv.children[k].style.display = 'initial';
+    }
+  }
+}
+
 
 
 
