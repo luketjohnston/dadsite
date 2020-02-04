@@ -1,6 +1,4 @@
-html {
-  overflow-y: scroll;
-}
+
 
 /* the "slideshow" stuff is used in home and in portrait, so it's in all.css */
 .myslideshow {
@@ -43,6 +41,7 @@ body {
   background-color: #000000;
   color: #cdb9b0;
   font-family: "Times New Roman", Times, serif;
+  width: 100vw;
 }
 
 h1 {
