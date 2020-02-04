@@ -27,5 +27,11 @@ from the shell
 
 
 
-TODO
+MAKE SURE TO TO THIS BEFORE PRODUCTION
 comment out urls.py settings that aren't necessary for production
+(the last thing added to the last line of urls.py)
+
+If your static files aren't updating somehow, just remove the "static" and "media" directories
+from the project directory, and then run python3 manage.py collectstatic again.
+
+If you can't see the images, you have to flush and reload the database as shown above
