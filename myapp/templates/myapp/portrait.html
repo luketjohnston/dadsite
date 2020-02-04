@@ -14,24 +14,28 @@
     <title{{title}}></title>
   </head>
   <body>
-    <div id='outerContainer'>
-      <div id='container1'>
-        <img id='portrait' src="{{portrait.image.url}}"> </img>
-        <div id='textDiv'>
-          <div id='description'> {{portrait.description}}</div>
-          <!-- 
-          <ul id='awards'> 
-            {% for award in awards %}
-            <li> 
-              {% if award.link %} <a href={{award.link}}> {% endif %}
-                {{award.description}} 
-              {% if award.link %} </a> {% endif %}
-            </li> 
-            {% endfor %}
-          </ul>
-          -->
-        </div>
+    <h1> 
+      <img src="{% static 'myapp/images/title.png'%}"> </img>
+    </h1>
+    <div class='myslideshow'>
+      <div class='myslide'>
+        <img class='slideimg' id='portrait' src="{{portrait.image.url}}"> </img>
       </div>
+    </div>
+
+    <div id='textDiv'>
+      <div id='description'> {{portrait.description}}</div>
+      <!-- 
+      <ul id='awards'> 
+        {% for award in awards %}
+        <li> 
+          {% if award.link %} <a href={{award.link}}> {% endif %}
+            {{award.description}} 
+          {% if award.link %} </a> {% endif %}
+        </li> 
+        {% endfor %}
+      </ul>
+      -->
     </div>
 
     <div id="gallery_index">
