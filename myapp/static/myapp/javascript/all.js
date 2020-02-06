@@ -48,5 +48,11 @@ function openNav() {
 function closeNav() {
   $('#overlay').fadeOut();
 }
+
+function notMobile() {
+  const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  console.log(vw)
+  return (vw > 481);
+}
   
 

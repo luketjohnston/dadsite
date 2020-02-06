@@ -18,7 +18,7 @@
     <h1> 
       <img src="{% static 'myapp/images/title.png'%}"> </img>
     </h1>
-    <div id="about"> 
+    <div id="about" class="style2"> 
         <img id='about_profile' src="{% static 'myapp/images/about_profile.jpg'%}"> </img>
         Scott Johnston received his BFA from Art Center College of Design in Pasadena, 
         California, and has been a professional artist for over 30 years. His art 
@@ -31,7 +31,7 @@
       no substitute for the force and beauty of its process.” — Henry James </i>
     </div>
     <div id="links">
-      <div id='menu' onclick="openNav()"> MENU </div>
+      <div class='menu' onclick="openNav()"> MENU </div>
       <a href="{%url 'home'%}"> HOME </a>
       <a href="{%url 'gallery'%}"> GALLERY </a>
       <a href="{%url 'about'%}"> ABOUT </a>

@@ -1,4 +1,10 @@
 
+.style2 {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  color: #B9A673;
+}
 
 /* the "slideshow" stuff is used in home and in portrait, so it's in all.css */
 .myslideshow {
@@ -62,7 +68,7 @@ h1 {
 h1 img {
   padding: 20px;
   /* It's not centered without this adjustment? maybe image doesn't have text centered */
-  padding-left: 21px;
+  padding-left: 23px;
   width: 100%;
   max-width: 490px;
 }
@@ -142,11 +148,21 @@ footer {
     text-align: center;
 }
 
-#menu {
+.menu {
     display: none;
 }
 
-#menu:hover {
+.topmenu {
+    display: none;
+}
+
+.topmenu:hover {
+  text-decoration: none;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.menu:hover {
   text-decoration: none;
   color: #FFFFFF;
   cursor: pointer;
@@ -200,9 +216,20 @@ footer {
 
 /* mobile in portrait mode */
 @media screen and (max-width: 481px) {
-  #menu {
+  .menu {
     display: initial;
     margin: 20px;
+  }
+
+  .topmenu {
+    display: initial;
+    margin: 0px;
+    margin-bottom: 10px;
+  }
+
+  h1 img {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   svg {

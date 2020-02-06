@@ -52,16 +52,11 @@ function update() {
   nextHash = visibleElements.first().next().data('myid');
   prevHash = visibleElements.first().prev().data('myid');
 
-  if(!nextHash) {
-    $("#next").css('visibility', 'hidden');
-  } else {
-    $("#next").css('visibility', 'initial');
-  }
-  
   if(!prevHash) {
-    $("#previous").css('visibility', 'hidden');
-  } else {
-    $("#previous").css('visibility', 'initial');
+    prevHash = $(".myslide").last().data('myid');
+  }
+  if(!nextHash) {
+    nextHash = $(".myslide").first().data('myid');
   }
 
   var urlBase = $("#previous").data('url');
