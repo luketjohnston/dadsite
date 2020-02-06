@@ -9,8 +9,10 @@
 }
 
 /* the "slideshow" stuff is used in home and in portrait, so it's in all.css */
+/* height was determined empirically to get the exact spacing desired (page starts shrinking
+ * down when window gets right above copyright */
 .myslideshow {
-  height: calc(100vh - 250px);
+  height: calc(85vh - 140px);
   max-height: 750px;
   min-height: 400px;
   min-width: 300px;
@@ -19,7 +21,7 @@
 }
 
 .myslide {
-  height: calc(100vh - 250px);
+  height: calc(85vh - 140px);
   width: 100%;
   max-height: 750px;
   min-height: 400px;
