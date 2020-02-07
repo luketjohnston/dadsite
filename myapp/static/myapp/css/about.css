@@ -2,24 +2,22 @@ body {
   color: #B9A673;
 }
 
-
 /* "a:" rules override defaults from all.cs for this page only */
-a:link {
-  color: #B9A673;
-}
-
-a:visited {
-  color: #B9A673;
-}
-a:hover {
-  text-decoration: none;
-  color: #FFFFFF;
-}
-
-
-svg {
-  fill: #B9A673;
-}
+//a:link {
+//  color: #B9A673;
+//}
+//
+//a:visited {
+//  color: #B9A673;
+//}
+//a:hover {
+//  text-decoration: none;
+//  color: #FFFFFF;
+//}
+//
+//svg {
+//  fill: #B9A673;
+//}
 
 #about_profile {
   display: block;
@@ -37,12 +35,13 @@ svg {
   text-justify: inter-word;
 }
 
+
 #quote {
   margin: auto;
   margin-top: 20px;
   margin-bottom: 40px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
   max-width: 500px;
   text-align: justify;
   text-justify: inter-word;

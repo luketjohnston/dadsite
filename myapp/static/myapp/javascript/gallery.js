@@ -112,9 +112,11 @@ function previousClick() {
   }
   let firstVisiblePortraitI = i;
   if (i === 0) {return;}
-  while (galDiv.children[firstVisiblePortraitI].offsetTop < galDiv.offsetHeight) {
+  while (galDiv.children[firstVisiblePortraitI].offsetTop < galDiv.offsetHeight && i > 0) {
     i--;
+    console.log(i);
     galDiv.children[i].style.display = display_mode;
+    setGalleryStyle();
   }
   setGalleryStyle();
 }
