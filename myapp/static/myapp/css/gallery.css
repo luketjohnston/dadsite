@@ -8,6 +8,8 @@
   text-align: center;
   // just high enough for two gallery lines;
   height: 460px;
+  // height: calc(82vh - 180px);
+  max-height: 460px;
   overflow: hidden;
   display: block;
   //justify-content: space-between;

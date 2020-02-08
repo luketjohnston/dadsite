@@ -21,7 +21,7 @@
     <div class='myslideshow'>
       {% for portrait in portraits %}
         <div class='myslide {{portrait.myid}}' data-myid={{portrait.myid}}>
-          <img class='slideimg' src="{{portrait.image.url}}"></img>
+          <img class='slideimg' data-myid={{portrait.myid}} src="{{portrait.image.url}}"></img>
         </div>
       {% endfor %}
     </div>
