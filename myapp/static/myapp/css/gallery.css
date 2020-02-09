@@ -9,7 +9,7 @@
   text-align: center;
   // just high enough for two gallery lines;
   //height: 460px;
-  height: calc(82vh - 180px);
+  height: calc(95vh - 270px);
   max-height: 460px;
   overflow: hidden;
   display: block;

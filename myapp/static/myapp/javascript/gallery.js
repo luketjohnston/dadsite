@@ -88,7 +88,7 @@ function updateImageHeight() {
     $('#gallery').css('max-height', 'none');
     return;
   }
-  $('#gallery').css('height', 'calc(82vh - 180px)');
+  $('#gallery').css('height', 'calc(95vh - 270px)');
 
   let minImgH = 120; 
   let padding = 40;
