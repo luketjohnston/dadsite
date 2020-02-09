@@ -27,8 +27,7 @@
     max-width: 530px;
     display: flex;
     justify-content: center;
-    margin-top: 35px;
-    margin-bottom: 30px;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -47,6 +46,13 @@
   cursor: pointer;
 }
 
+.myslideshow {
+  height: calc(85vh - 200px);
+}
+
+.myslide {
+  height: calc(85vh - 200px);
+}
 
 
 #previous {
