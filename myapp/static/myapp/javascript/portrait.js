@@ -107,6 +107,13 @@ function update() {
 
 }
 
+// need to override this to keep its z-index at the front, since on this page we're constantly increasing
+// z-indices when scrolling through arrows
+function openNav() {
+  $('#overlay').first().css('z-index', topZ + '');
+  $('#overlay').fadeIn();
+}
+
   
 
 
