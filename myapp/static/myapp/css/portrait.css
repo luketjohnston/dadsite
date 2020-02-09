@@ -49,6 +49,7 @@
 }
 
 .myslide {
+  display: none;
   height: calc(85vh - 220px);
 }
 

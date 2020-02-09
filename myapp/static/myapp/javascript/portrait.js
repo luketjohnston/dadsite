@@ -24,7 +24,6 @@ function getContainedSize(img) {
 
 function updateDescriptionSizes() {
   portraitsImgs = $(".slideimg");
-  console.log('here');
   portraitsImgs.each(function(i) {
     let myid = $(this).data('myid');
     let width = getContainedSize(this)[0];
@@ -61,8 +60,8 @@ function maxWidth(elems){
 function nextClick() {
   if(nextHash) {
     visibleElements.css('opacity', 0);
+    visibleElements.first().css('display', 'none');
     hash = nextHash;
-    console.log(window.location.hash);
     update();
     window.location.hash = '#' + hash;
   }
@@ -71,8 +70,8 @@ function nextClick() {
 function prevClick() {
   if(prevHash) {
     visibleElements.css('opacity', 0);
+    visibleElements.first().css('display', 'none');
     hash = prevHash;
-    console.log(window.location.hash);
     update();
     window.location.hash = '#' + hash;
   }
@@ -83,6 +82,7 @@ function update() {
   visibleElements = $("." + $.escapeSelector(hash));
   
   visibleElements.css('opacity', 1);
+  visibleElements.first().css('display', 'block');
   
   nextHash = visibleElements.first().next().data('myid');
   prevHash = visibleElements.first().prev().data('myid');
