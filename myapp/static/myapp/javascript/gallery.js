@@ -131,7 +131,7 @@ function updateImageHeight() {
   } else {
     // gallery can be a little wider for the single-row version, because we want to be 
     // able to fit 3 images in each page
-    $('#gallery').css('max-width', Math.min(Math.max(w1,w2),galMaxW + 100) + 10 + 'px');
+    $('#gallery').css('max-width', Math.min(Math.max(w1,w2),galMaxW + 150) + 70 + 'px');
   }
 
 
