@@ -1,10 +1,12 @@
 
-body {
-  color: #B9A673;
-}
 
 #email, #phone {
+  color: #B9A673;
   letter-spacing: 2px;
+}
+
+#email > b, #phone > b {
+  letter-spacing: initial;
 }
 
 #email a {

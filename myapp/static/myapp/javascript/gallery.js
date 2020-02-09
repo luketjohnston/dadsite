@@ -12,9 +12,6 @@ var currentPage = 0;
 document.getElementById('previous').addEventListener("click", previousClick);
 document.getElementById('next').addEventListener("click", nextClick);
 
-var y = window.matchMedia("(max-width: 481px)")
-y.addListener(displayAllImages) // Attach listener function on state changes
-
 function displayAllImages(x) {
   if (x.matches) {
     for (let k=0; k < numPortraits; k++) {
@@ -142,8 +139,7 @@ function updateImageHeight() {
 
 
 function nextClick() {
-  // first, determine viewing mode:
-  display_mode = $(window).width() > 400 ? 'initial' : 'block';
+  display_mode = 'initial';
 
   let i = 0;
   // determine what portrait will be the first on the next page
@@ -170,12 +166,11 @@ function nextClick() {
 
 function previousClick() {
   // This is non-obvious to implement, but turns out pretty simple. We just
-  //  iterate backward through the children, setting their display to 'block'
-  // or 'initial', depending on whether we are viewing on mobile or not,
+  //  iterate backward through the children, setting their display to 'initial',
   //  until the previous first visible portrait is no longer visible.
 
   // first, determine viewing mode:
-  display_mode = $(window).width() > 400 ? 'initial' : 'block';
+  display_mode = 'initial';
   var i = 0; 
   while (galDiv.children[i].style.display === 'none') {
     i++;
