@@ -48,6 +48,7 @@ function setGalleryStyle() {
   }
 
   let numVisible = i - firstVisible;
+  console.log('numVisible:' + numVisible);
   if (numVisible % 2 === 1 || numVisible == 2) {
     galDiv.style.display = 'block';
     galDiv.style.width = 'auto';
@@ -125,7 +126,8 @@ function updateImageHeight() {
       ratio = dom_im.naturalWidth / dom_im.naturalHeight;
       w2 += (ratio * setHeight) + padding;
     }
-    $('#gallery').css('max-width', Math.min(Math.max(w1,w2),galMaxW - 10) + 10 + 'px');
+    // 70 is just a hack so it looks good for the default window size
+    $('#gallery').css('max-width', Math.min(Math.max(w1,w2),galMaxW - 10) + 70 + 'px');
   } else {
     // gallery can be a little wider for the single-row version, because we want to be 
     // able to fit 3 images in each page
