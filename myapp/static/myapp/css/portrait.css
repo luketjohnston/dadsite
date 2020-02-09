@@ -49,7 +49,7 @@
 }
 
 .myslide {
-  display: none;
+  opacity: 0;
   height: calc(85vh - 220px);
 }
 

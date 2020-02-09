@@ -5,6 +5,7 @@ var hash = window.location.hash.substr(1);
 var visibleElements;
 var nextHash;
 var prevHash;
+var topZ = 100;
 
 
 window.onresize = updateDescriptionSizes;
@@ -30,6 +31,8 @@ function updateDescriptionSizes() {
     let description = $('.description.' + myid);
     description.first().width(width);
   });
+  var maxDescriptionHeight = maxHeight($('.description'));
+  $('#textDiv').height(maxDescriptionHeight);
 }
     
 
@@ -60,20 +63,24 @@ function maxWidth(elems){
 function nextClick() {
   if(nextHash) {
     visibleElements.css('opacity', 0);
-    visibleElements.first().css('display', 'none');
+    //visibleElements.first().css('display', 'none');
+    topZ = topZ + 1;
     hash = nextHash;
     update();
     window.location.hash = '#' + hash;
+    visibleElements.first().css('z-index', topZ + '');
   }
 }
 
 function prevClick() {
   if(prevHash) {
     visibleElements.css('opacity', 0);
-    visibleElements.first().css('display', 'none');
+    //visibleElements.first().css('display', 'none');
+    topZ = topZ + 1;
     hash = prevHash;
     update();
     window.location.hash = '#' + hash;
+    visibleElements.first().css('z-index', topZ + '');
   }
 }
 
@@ -82,7 +89,7 @@ function update() {
   visibleElements = $("." + $.escapeSelector(hash));
   
   visibleElements.css('opacity', 1);
-  visibleElements.first().css('display', 'block');
+  //visibleElements.first().css('display', 'block');
   
   nextHash = visibleElements.first().next().data('myid');
   prevHash = visibleElements.first().prev().data('myid');
