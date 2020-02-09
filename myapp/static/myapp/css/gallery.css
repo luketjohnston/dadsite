@@ -1,4 +1,5 @@
 
+/* make sure max-width matches galMaxW  and min-height matches minImgH + padding in gallery.css */
 #gallery {
   position: relative; 
   width: 100%; 
@@ -7,11 +8,12 @@
   margin-right: auto;
   text-align: center;
   // just high enough for two gallery lines;
-  height: 460px;
-  // height: calc(82vh - 180px);
+  //height: 460px;
+  height: calc(82vh - 180px);
   max-height: 460px;
   overflow: hidden;
   display: block;
+  min-height: 160px; 
   //justify-content: space-between;
   //display: flex;
   //flex-wrap: wrap;
@@ -37,6 +39,8 @@ hr {
 }
 
 
+/* make sure that the image margin-top + margin-bottom is the same as "padding" in the 
+   updateImageHeight() function in gallery.js */
 #gallery > a > img {
   // not sure why, but margins dont overlap with current setup;
   margin-left: 20px;

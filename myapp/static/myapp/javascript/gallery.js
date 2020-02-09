@@ -2,7 +2,7 @@
 var firstVisiblePortrait = 0;
 
 // runs this when document is ready
-$(setGalleryStyle);
+$(resizeGallery);
 
 const galDiv = document.getElementById("gallery");
 const numPortraits = galDiv.children.length;
@@ -23,11 +23,17 @@ function displayAllImages(x) {
   }
 }
 
-window.onresize = setGalleryStyle;
+window.onresize = resizeGallery;
+
+function resizeGallery() {
+  updateImageHeight();
+  setGalleryStyle();
+}
 
 // determines whether an odd or even number of images is visible, ad sets the style accordingly
 // (odd numbers have constant margins between images, even numbers are justified
 function setGalleryStyle() {
+  // TODO do we need this?
   galDiv.style.width = 'auto';
   galDiv.style.display = 'block';
   galDiv.style.justifyContent = 'none';
@@ -42,9 +48,7 @@ function setGalleryStyle() {
   }
 
   let numVisible = i - firstVisible;
-  console.log('numVisible')
-  console.log(numVisible)
-  if (numVisible % 2 === 1) {
+  if (numVisible % 2 === 1 || numVisible == 2) {
     galDiv.style.display = 'block';
     galDiv.style.width = 'auto';
   } else {
@@ -61,14 +65,70 @@ function setGalleryStyle() {
       botWidth += $(galDiv.children[firstVisible + k]).outerWidth(true);
       k++; 
     }
-    console.log("setting width:");
-    console.log(Math.max(topWidth, botWidth));
     galDiv.style.width = Math.max(topWidth, botWidth) + 'px';
     galDiv.style.display = 'flex';
     galDiv.style.flexWrap = 'wrap';
     galDiv.style.justifyContent = 'space-between';
   }
 } 
+
+
+
+// determines whether we can fit one or two rows of images in the gallery div. If we can fit only fit one, sets image
+// height to be as large as possible to fill the div. If we can fit two, then sets image height as large
+// as possible given that we can fit two.
+function updateImageHeight() {
+
+  // check if mobile version and if so don't run.
+  if (document.getElementById('gallery').style.height === 'auto') {
+    console.log("bailing updateImageHeight, height is auto");
+    return;
+  }
+
+  let minImgH = 120; 
+  let padding = 40;
+
+  let galHeight = $('#gallery').height();
+  console.log('galHeight: ' + galHeight);
+  let minTwoRowH = (minImgH + padding) * 2;
+  console.log('minTwoRowH: ' + minTwoRowH);
+  let setHeight = 0;
+  if (galHeight > minTwoRowH) {
+    setHeight = Math.floor((galHeight - 2 * padding) / 2) - 1;
+  } else {
+    setHeight = Math.max(galHeight - padding, minImgH);
+  }
+
+  $('#gallery > a > img').css('height', setHeight + 'px');
+
+  //now that we've figured out image height, we need to set the width so that the
+  // first page of the gallery shows 6 images for the 2-row version, and 3 for one-row
+  let galMaxW = 620; // make sure matches gallery.css
+  let w1 = 0;
+  let w2 = 0;
+  let imgs = $('#gallery > a > img')
+  for (i=0; i < 3; i++) {
+    // have to compute width from setHeight since images may not be currently displayed
+    dom_im = imgs.get(i)
+    ratio = dom_im.naturalWidth / dom_im.naturalHeight;
+    w1 += (ratio * setHeight) + padding;
+  }
+  if (galHeight > minTwoRowH) {
+    for (i=3; i < 6; i++) {
+      dom_im = imgs.get(i)
+      ratio = dom_im.naturalWidth / dom_im.naturalHeight;
+      w2 += (ratio * setHeight) + padding;
+    }
+    $('#gallery').css('max-width', Math.min(Math.max(w1,w2),galMaxW - 10) + 10 + 'px');
+  } else {
+    // gallery can be a little wider for the single-row version, because we want to be 
+    // able to fit 3 images in each page
+    $('#gallery').css('max-width', Math.min(Math.max(w1,w2),galMaxW + 100) + 10 + 'px');
+  }
+
+
+  
+}
   
 
 
@@ -83,12 +143,14 @@ function nextClick() {
       galDiv.children[i].style.display === 'none')) { 
     i++; 
   }
+  firstVisiblePortrait = i;
 
   if (i === numPortraits) {
     // go back to beginning, set all portraits visible again
     for (i = 0; i < numPortraits; i++) {
       galDiv.children[i].style.display = display_mode;
     }
+    firstVisiblePortrait = 0;
     setGalleryStyle();
     return;
   }
@@ -110,11 +172,10 @@ function previousClick() {
   while (galDiv.children[i].style.display === 'none') {
     i++;
   }
-  let firstVisiblePortraitI = i;
+  firstVisiblePortraitI = i;
   if (i === 0) {return;}
   while (galDiv.children[firstVisiblePortraitI].offsetTop < galDiv.offsetHeight && i > 0) {
     i--;
-    console.log(i);
     galDiv.children[i].style.display = display_mode;
     setGalleryStyle();
   }
