@@ -80,10 +80,15 @@ function setGalleryStyle() {
 function updateImageHeight() {
 
   // check if mobile version and if so don't run.
-  if (document.getElementById('gallery').style.height === 'auto') {
-    console.log("bailing updateImageHeight, height is auto");
+
+  console.log('here')
+  if (window.matchMedia("(max-width: 481px)").matches) {
+    $('#gallery > a > img').css('height', 'auto');
+    $('#gallery').css('height', 'auto');
+    $('#gallery').css('max-height', 'none');
     return;
   }
+  $('#gallery').css('height', 'calc(82vh - 180px)');
 
   let minImgH = 120; 
   let padding = 40;
