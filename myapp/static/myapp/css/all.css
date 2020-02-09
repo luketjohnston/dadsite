@@ -131,7 +131,7 @@ svg {
   height: 12px;
   width: 12px;
   position: relative;
-  top: -12%;
+  top: -2px;
   //fill: #cdb9b0;
   fill: #999999;
 }
@@ -266,10 +266,6 @@ svg:hover {
   h1 img {
     padding-top: 0px;
     padding-bottom: 0px;
-  }
-
-  svg {
-    top: -15%;
   }
 
   .myslideshow {
