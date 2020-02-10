@@ -1,4 +1,3 @@
-
 /* make sure max-width matches galMaxW  and min-height matches minImgH + padding in gallery.css */
 #gallery {
   position: relative; 
@@ -71,7 +70,7 @@ hr {
   }
   #gallery > a {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     margin-top: 0px;
   }
   #gallery > a > img {

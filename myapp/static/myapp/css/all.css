@@ -259,8 +259,11 @@ svg:hover {
 
   .topmenu {
     display: initial;
+    position: relative;
+    top: -10px;
     margin: 0px;
     margin-bottom: 10px;
+    height: 8px;
   }
 
   h1 img {
@@ -286,6 +289,9 @@ svg:hover {
 
   h1 {
     min-width: 300px;
+  }
+  .icons {
+    margin-top: 0px;
   }
     
 }
