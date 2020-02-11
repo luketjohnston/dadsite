@@ -12,6 +12,7 @@ var currentPage = 0;
 document.getElementById('previous').addEventListener("click", previousClick);
 document.getElementById('next').addEventListener("click", nextClick);
 
+var x = window.matchMedia("(max-width: 481px)")
 function displayAllImages(x) {
   if (x.matches) {
     for (let k=0; k < numPortraits; k++) {
@@ -19,6 +20,7 @@ function displayAllImages(x) {
     }
   }
 }
+x.addListener(displayAllImages)
 
 window.onresize = resizeGallery;
 

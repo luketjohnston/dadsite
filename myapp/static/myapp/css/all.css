@@ -15,8 +15,8 @@
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 footer {
@@ -189,6 +189,7 @@ svg:hover {
 }
 
 .topmenu {
+    color: #666;
     display: none;
 }
 
@@ -292,6 +293,21 @@ svg:hover {
   }
   .icons {
     margin-top: 0px;
+  }
+  .icons > a {
+    color: #666;
+  }
+  .icons > a:visited {
+    color: #666;
+  }
+  .icons > a:link {
+    color: #666;
+  }
+  .icons > a:hover {
+    color: #FFFFFF;
+  }
+  svg {
+    fill: #666;
   }
     
 }
