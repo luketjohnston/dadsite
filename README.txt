@@ -35,3 +35,9 @@ If your static files aren't updating somehow, just remove the "static" and "medi
 from the project directory, and then run python3 manage.py collectstatic again.
 
 If you can't see the images, you have to flush and reload the database as shown above
+
+For production, need to give apache2 user (www-data) the permission to write to the database file
+and log.txt files:
+sudo chown www-data:www-data .
+sudo chown www-data:www-data db.sqlite3
+

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Portrait
 
 
+
 # Create your views here.
 def home(request):
   portrait_list = Portrait.objects.filter(slideshow_order__gt=0).order_by('slideshow_order')
