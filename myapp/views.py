@@ -10,6 +10,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
+
 # Create your views here.
 def home(request):
   logger.error('Something went wrong! PLEASE WORK')

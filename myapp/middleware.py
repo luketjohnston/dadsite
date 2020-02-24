@@ -16,4 +16,5 @@ class ErrorLoggingMiddleware:
 
   def process_exception(self, request, exception):
     logger.error(exception)   
-    return 
+    response = self.get_response(request)
+    return response
