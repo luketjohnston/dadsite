@@ -13,13 +13,10 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 def home(request):
-  logger.error('Something went wrong! PLEASE WORK')
   portrait_list = Portrait.objects.filter(slideshow_order__gt=0).order_by('slideshow_order')
-  print(portrait_list)
   return render(request, 'myapp/home.html', {'portrait_list' : portrait_list})
 
 def gallery(request):
-  raise Exception('PLEAAJKFLJKDSLFJKSDLJF')
   portrait_list = Portrait.objects.all()
   context = {'portrait_list' : portrait_list, 'portraits_per_page' : 6}
   return render(request, 'myapp/gallery.html', context)
@@ -41,5 +38,7 @@ def portrait(request):
 
 
 def view_404(request, exception=None):
+    print('herhewkkrejwlr')
+    logger.error('IN VIEW 404')
     return redirect('/') 
 

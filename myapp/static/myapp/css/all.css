@@ -21,9 +21,10 @@
 
 footer {
     text-align: center;
-    color: #666;
+    color: #222;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 10px;
+    margin-bottom: 65px;
 }
 
 /* the "slideshow" stuff is used in home and in portrait, so it's in all.css */
@@ -127,13 +128,29 @@ a:hover {
   color: #FFFFFF;
 }
 
+.icons > a {
+  color: #333;
+}
+.icons > a:visited {
+  color: #333;
+}
+.icons > a:link {
+  color: #333;
+}
+.icons > a:hover {
+  color: #FFFFFF;
+}
+svg {
+  fill: #333;
+}
+
 svg {
   height: 12px;
   width: 12px;
   position: relative;
   top: -2px;
   //fill: #cdb9b0;
-  fill: #999999;
+  fill: #333;
 }
 
 svg:hover {
@@ -189,7 +206,7 @@ svg:hover {
 }
 
 .topmenu {
-    color: #666;
+    color: #333;
     display: none;
 }
 
@@ -293,21 +310,6 @@ svg:hover {
   }
   .icons {
     margin-top: 0px;
-  }
-  .icons > a {
-    color: #666;
-  }
-  .icons > a:visited {
-    color: #666;
-  }
-  .icons > a:link {
-    color: #666;
-  }
-  .icons > a:hover {
-    color: #FFFFFF;
-  }
-  svg {
-    fill: #666;
   }
     
 }

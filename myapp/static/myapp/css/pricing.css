@@ -73,4 +73,7 @@ h2 {
     margin-left: 4%;
     margin-right: 4%;
   }
+  #email a:hover {
+    color: #B9A673;
+  }
 }
