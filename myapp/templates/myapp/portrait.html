@@ -28,7 +28,7 @@
 
     <div id='textDiv'>
       {% for portrait in portraits %}
-        <div class="description {{portrait.myid}}"> {{portrait.description}}</div>
+        <div class="description {{portrait.myid}}"> {{portrait.description|safe}}</div>
         <!-- AWARDS ARE WAY OUT OF DATE, REMOVED EARLY 
         <ul id='awards'> 
           {% for award in awards %}

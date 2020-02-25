@@ -13,6 +13,10 @@ class Portrait(models.Model):
   # used to "get()" portraits in load_script.py
   myid = models.CharField(max_length=20)
   staticurl = models.CharField(max_length=200)
+
+  def __str__(self):
+      return self.identifier
+
     
 
 

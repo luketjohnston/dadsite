@@ -1,3 +1,5 @@
+from myapp import views
+
 """dadsite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -20,3 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myapp.urls')),
 ]
+
+# this one is for 404 redirects to homepage
+handler404 = views.view_404

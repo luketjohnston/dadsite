@@ -19,6 +19,4 @@ urlpatterns = [
 # And the last one is so media is served when using runserver. Should remove for production I would guess.
 
 
-# this one is for 404 redirects to homepage
-handler404 = views.view_404
 
