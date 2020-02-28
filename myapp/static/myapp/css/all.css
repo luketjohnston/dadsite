@@ -21,7 +21,7 @@
 
 footer {
     text-align: center;
-    color: #222;
+    color: #444;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 10px;
     margin-bottom: 65px;
@@ -129,19 +129,19 @@ a:hover {
 }
 
 .icons > a {
-  color: #333;
+  color: #444;
 }
 .icons > a:visited {
-  color: #333;
+  color: #444;
 }
 .icons > a:link {
-  color: #333;
+  color: #444;
 }
 .icons > a:hover {
   color: #FFFFFF;
 }
 svg {
-  fill: #333;
+  fill: #444;
 }
 
 svg {
@@ -150,7 +150,7 @@ svg {
   position: relative;
   top: -2px;
   //fill: #cdb9b0;
-  fill: #333;
+  fill: #444;
 }
 
 svg:hover {
@@ -206,7 +206,7 @@ svg:hover {
 }
 
 .topmenu {
-    color: #333;
+    color: #444;
     display: none;
 }
 
@@ -309,7 +309,8 @@ svg:hover {
     min-width: 300px;
   }
   .icons {
-    margin-top: 0px;
+    margin-top: 15px;
+    margin-bottom: 35px;
   }
     
 }

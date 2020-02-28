@@ -36,6 +36,10 @@
   .mobile_box_container {
     display: inline;
   }
+  .icons {
+    margin-top: 0px;
+    margin-bottom: 50px;
+  }
 }
 
 /* if window is too short to fit full menu below slideshow, make it mobile version */
