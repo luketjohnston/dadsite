@@ -42,16 +42,15 @@ function linksNone(x) {
 }
 
 function openNav() {
-  $('#overlay').fadeIn();
+  $('#overlay').fadeIn(800);
 }
 
 function closeNav() {
-  $('#overlay').fadeOut();
+  $('#overlay').fadeOut(800);
 }
 
 function notMobile() {
   const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-  console.log(vw)
   return (vw > 481);
 }
   
