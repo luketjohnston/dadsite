@@ -42,11 +42,18 @@ function linksNone(x) {
 }
 
 function openNav() {
-  $('#overlay').fadeIn(1200);
+  $('#overlay').fadeIn(0);
+  $('#overlay_inner').fadeIn(1200);
 }
 
 function closeNav() {
   $('#overlay').fadeOut(1600);
+  $('#overlay_inner').fadeOut(1600);
+}
+
+function closeNavFast() {
+  $('#overlay').fadeOut(0);
+  $('#overlay_inner').fadeOut(0);
 }
 
 function notMobile() {

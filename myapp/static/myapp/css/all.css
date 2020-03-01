@@ -216,6 +216,7 @@ svg {
 }
 
 #overlay_inner {
+  display: none;
   padding: 60px;
 }
 
