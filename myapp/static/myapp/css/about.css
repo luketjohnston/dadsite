@@ -2,22 +2,6 @@ body {
   color: #B9A673;
 }
 
-/* "a:" rules override defaults from all.cs for this page only */
-//a:link {
-//  color: #B9A673;
-//}
-//
-//a:visited {
-//  color: #B9A673;
-//}
-//a:hover {
-//  text-decoration: none;
-//  color: #FFFFFF;
-//}
-//
-//svg {
-//  fill: #B9A673;
-//}
 
 #about_profile {
   display: block;

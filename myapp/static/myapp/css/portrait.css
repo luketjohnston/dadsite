@@ -50,12 +50,6 @@
   left: -0.5px;
 }
 
-#next:hover {
-  cursor: pointer;
-}
-#previous:hover {
-  cursor: pointer;
-}
 
 .myslideshow {
   height: calc(85vh - 220px);
@@ -80,6 +74,20 @@
 @media screen and (max-width: 481px) {
   #gallery_index  {
     margin-top: 20px;
+  }
+
+  .menu {
+    margin-top: 15px;
+  }
+}
+
+/* all hover effects go in here, so they don't fire on mobile */
+@media(hover: hover) and (pointer: fine) {
+  #next:hover {
+    cursor: pointer;
+  }
+  #previous:hover {
+    cursor: pointer;
   }
 }
 
