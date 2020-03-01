@@ -42,9 +42,19 @@ function linksNone(x) {
 }
 
 function openNav() {
-  $('#overlay').fadeIn(0);
-  $('#overlay_inner').fadeIn(1200);
+  setTimeout(function() {
+    $('#overlay').fadeIn(0);
+    $('#overlay_inner').fadeIn(1200);
+  }, 150);
 }
+
+function topmenuTouch(color2, color1) {
+  $('.topmenu > i').css('color', color2);
+  setTimeout(function() {
+    $('.topmenu > i').css('color', color1);
+  }, 300);
+}
+  
 
 function closeNav() {
   $('#overlay').fadeOut(1600);

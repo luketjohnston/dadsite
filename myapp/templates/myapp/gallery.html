@@ -20,7 +20,7 @@
     </h1>
     <div id="viewnote"> For a better viewing experience, please turn phone to portrait mode, or resize browser window. </div>
     <div class="links">
-      <div class='topmenu' onclick="openNav()" ontouchstart="touchStart(this, '#FFFFFF', '#444')"> <i class="fas fa-bars"> </i> </div>
+      <div class='topmenu' onclick="topmenuTouch('#FFFFFF', '#444'); openNav()" ontouchstart="topmenuTouch('#FFFFFF', '#444')"> <i class="fas fa-bars"> </i> </div>
     </div>
     <div id="gallery">
         {% for portrait in portrait_list %}
