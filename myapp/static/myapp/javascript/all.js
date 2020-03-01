@@ -42,16 +42,43 @@ function linksNone(x) {
 }
 
 function openNav() {
-  $('#overlay').fadeIn(800);
+  $('#overlay').fadeIn(1200);
 }
 
 function closeNav() {
-  $('#overlay').fadeOut(800);
+  $('#overlay').fadeOut(1600);
 }
 
 function notMobile() {
   const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
   return (vw > 481);
 }
+
+// makes element change color briefly on mobile
+function touchStart(el, color2, color1) {
+  el.style.color = color2;
+  console.log(el);
+  console.log(el.style.color);
+  setTimeout(function() {
+    el.style.color = color1;
+  }, 300);
+}
+
+// makes element change color briefly on mobile
+function touchStartSVG(el, color2, color1) {
+  el.style.fill = color2;
+  setTimeout(function() {
+    el.style.fill = color1;
+  }, 300);
+}
+
+function arrowTouch(el, src2, src1) {
+  el.src = src2;
+  setTimeout(function() {
+    el.src = src1;
+  }, 300);
+}
+  
+
   
 

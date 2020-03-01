@@ -111,7 +111,7 @@ function update() {
 // z-indices when scrolling through arrows
 function openNav() {
   $('#overlay').first().css('z-index', topZ + '');
-  $('#overlay').fadeIn(800);
+  $('#overlay').fadeIn(1200);
 }
 
   

@@ -178,7 +178,16 @@ function previousClick() {
     i++;
   }
   firstVisiblePortraitI = i;
-  if (i === 0) {return;}
+  if (i === 0) {
+    // nextClick until loop, and record how many clicks it took. Then
+    // just nextClick one less than that number of times.
+    let nextClicks = 0;
+    do { nextClick(); nextClicks ++; } while (firstVisiblePortrait !== i);
+    for (let k = 0; k < nextClicks - 1; k++) {
+      nextClick();
+    }
+    return;
+  }
   while (galDiv.children[firstVisiblePortraitI].offsetTop < galDiv.offsetHeight && i > 0) {
     i--;
     galDiv.children[i].style.display = display_mode;
