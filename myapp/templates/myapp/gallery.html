@@ -24,7 +24,7 @@
     </div>
     <div id="gallery">
         {% for portrait in portrait_list %}
-            <a href="{% url 'portrait' %}#{{portrait.myid}}"> <img src="{{ portrait.image.url }}" >  </img> </a>
+            <a href="{% url 'portrait' %}#{{portrait.identifier}}"> <img src="{{ portrait.thumbnail.url }}" alt="{{portrait.description}} - thumbnail of oil portrait by artist Scott Wallace Johnston">  </img> </a>
         {% endfor %}
     </div>
 
