@@ -41,3 +41,8 @@ and log.txt files:
 sudo chown www-data:www-data .
 sudo chown www-data:www-data db.sqlite3
 
+
+
+
+TO get working on cpanel:
+downgrade django to 2.0.7 (the sqlite version wasn't high enough on cpanel for newer versions of django)

@@ -47,7 +47,6 @@ function setGalleryStyle() {
   }
 
   let numVisible = i - firstVisible;
-  console.log('numVisible:' + numVisible);
   if (numVisible % 2 === 1 || numVisible == 2) {
     galDiv.style.display = 'block';
     galDiv.style.width = 'auto';
@@ -81,7 +80,6 @@ function updateImageHeight() {
 
   // check if mobile version and if so don't run.
 
-  console.log('here')
   if (window.matchMedia("(max-width: 481px)").matches) {
     $('#gallery > a > img').css('height', 'auto');
     $('#gallery').css('height', 'auto');
@@ -95,9 +93,7 @@ function updateImageHeight() {
   let padding = 40;
 
   let galHeight = $('#gallery').height();
-  console.log('galHeight: ' + galHeight);
   let minTwoRowH = (minImgH + padding) * 2;
-  console.log('minTwoRowH: ' + minTwoRowH);
   let setHeight = 0;
   if (galHeight > minTwoRowH) {
     setHeight = Math.floor((galHeight - 2 * padding) / 2) - 1;

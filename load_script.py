@@ -115,7 +115,7 @@ for i,f in enumerate(filenames):
     slideshow_order=slideshow_orders[i],
     myid = short_ids[i],
   )
-  p.image.save(f, File(open('/var/www/html/dadsite/images/portraits/' + f, 'rb')))
+  p.image.save(f, File(open('/home/v9xm9e4lqiii/dadsite/images/portraits/' + f, 'rb')))
   p.save()
 
 
