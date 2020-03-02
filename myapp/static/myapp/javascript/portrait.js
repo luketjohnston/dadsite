@@ -26,9 +26,9 @@ function getContainedSize(img) {
 function updateDescriptionSizes() {
   portraitsImgs = $(".slideimg");
   portraitsImgs.each(function(i) {
-    let myid = $(this).data('myid');
+    let identifier = $(this).data('identifier');
     let width = getContainedSize(this)[0];
-    let description = $('.description.' + myid);
+    let description = $('.description.' + identifier);
     description.first().width(width);
   });
   var maxDescriptionHeight = maxHeight($('.description'));
@@ -91,14 +91,14 @@ function update() {
   visibleElements.css('opacity', 1);
   //visibleElements.first().css('display', 'block');
   
-  nextHash = visibleElements.first().next().data('myid');
-  prevHash = visibleElements.first().prev().data('myid');
+  nextHash = visibleElements.first().next().data('identifier');
+  prevHash = visibleElements.first().prev().data('identifier');
 
   if(!prevHash) {
-    prevHash = $(".myslide").last().data('myid');
+    prevHash = $(".myslide").last().data('identifier');
   }
   if(!nextHash) {
-    nextHash = $(".myslide").first().data('myid');
+    nextHash = $(".myslide").first().data('identifier');
   }
 
   var urlBase = $("#previous").data('url');

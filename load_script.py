@@ -108,12 +108,10 @@ slideshow_orders = [
 
 for i,f in enumerate(filenames):
   p = Portrait(
-    identifier=f,
-    staticurl='myapp/images/' + f,
     description=descriptions[i],
     gallery_order=gallery_orders[i],
     slideshow_order=slideshow_orders[i],
-    myid = short_ids[i],
+    identifier = short_ids[i],
   )
   p.image.save(f, File(open('/home/v9xm9e4lqiii/dadsite/images/portraits/' + f, 'rb')))
   p.save()
@@ -121,7 +119,7 @@ for i,f in enumerate(filenames):
 
 awards = []
 
-p = Portrait.objects.get(myid='Walker') 
+p = Portrait.objects.get(identifier='Walker') 
 awards.append(
   (p, 'Awarded third place, Portrait Society of America’s Members Only Competition, 2012',
    'http://www.portraitsociety.org/'))
@@ -132,21 +130,21 @@ awards.append(
   (p, 'Art Renewal Center Salon Finalist, 2013-14',
    'http://artrenewal.org/pages/salon_winners.php?contest=2013-2014%20Salon&page=Figurative'))
 
-p = Portrait.objects.get(myid='Armstrong') 
+p = Portrait.objects.get(identifier='Armstrong') 
 awards.append(
   (p, 'Art Renewal Center Salon Finalist, 2016', 
    'http://artrenewal.org/pages/salon_winners.php?contest=2013-2014%20Salon&page=Figurative'))
 
-p = Portrait.objects.get(myid='Wilken') 
+p = Portrait.objects.get(identifier='Wilken') 
 awards.append(
   (p, 'Art Renewal Center Salon Finalist, 2016', 'http://artrenewal.org/pages/salon_winners.php?contest=2013-2014%20Salon&page=Figurative'))
 
-p = Portrait.objects.get(myid='Breyer')
+p = Portrait.objects.get(identifier='Breyer')
 awards.append(
   (p, 'Honors Award, Portrait Society of America’s Members Only Competition, 2013',
    'http://www.portraitsociety.org/'))
 
-p = Portrait.objects.get(myid='Eshima')
+p = Portrait.objects.get(identifier='Eshima')
 awards.append(
   (p, 'Shinji Eshima with his Plumerel Bass, the very same instrument painted by Degas in L’Orchestre de l’Opera.', 'http://it.wikipedia.org/wiki/File:Degas_l%27orchestre.jpg'))
 awards.append(
@@ -154,11 +152,11 @@ awards.append(
 awards.append(
   (p, 'Honors Award, Portrait Society of America’s Members Only Competition, 2014', 'http://www.portraitsociety.org/'))
 
-p = Portrait.objects.get(myid='Ray')
+p = Portrait.objects.get(identifier='Ray')
 awards.append(
   (p, 'Finalist, Portrait Society of America\'s Members Only Competition, 2016', 'http://artrenewal.org/pages/salon_winners.php?contest=2013-2014%20Salon&page=Figurative'))
 
-p = Portrait.objects.get(myid='Devine')
+p = Portrait.objects.get(identifier='Devine')
 awards.append(
   (p, 'Award Winner Ray Mar Art Contest 2014', 'https://www.scottjohnstonportraits.com/images/award-winner-scott-johnston.pdf'))
 awards.append(
@@ -168,17 +166,17 @@ awards.append(
 awards.append(
   (p, 'Art Renewal Center Salon Finalist, 2013-14', 'http://artrenewal.org/pages/salon_winners.php?contest=2013-2014%20Salon&page=Figurative'))
 
-p = Portrait.objects.get(myid='Chesney')
+p = Portrait.objects.get(identifier='Chesney')
 awards.append(
   (p, 'Honors Award, Portrait Society of America’s Members Only Competition, 2010', 'http://www.portraitsociety.org/'))
 
-p = Portrait.objects.get(myid='Shelby')
+p = Portrait.objects.get(identifier='Shelby')
 awards.append(
   (p, 'Ray Mar Art Contest Finalist', 'http://www.raymarartcontest.com/'))
 awards.append(
   (p, 'Featured in International Artist Magazine', 'https://www.internationalartist.com/'))
 
-p = Portrait.objects.get(myid='Ware')
+p = Portrait.objects.get(identifier='Ware')
 awards.append(
   (p, 'Honors Award, Portrait Society of America’s Members Only Competition, 2012', ''))
 
