@@ -30,11 +30,14 @@ SECRET_KEY = 'e82&oc=ulchvns*ntl1n^n50^t8-qk@z91zd$2!92ybixor5lb'
 #SESSION_COOKIE_SECURE = True
 #CSRF_COOKIE_SECURE = True
 #SECURE_HSTS_PRELOAD = True
+#SECURE_CONTENT_TYPE_NOSNIFF = True
+#SECURE_BROWSER_XSS_FILTER = True
+#X_FRAME_OPTIONS = 'DENY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['35.222.14.6', '127.0.0.1']
+ALLOWED_HOSTS = ['35.222.14.6', '127.0.0.1', 'scottjohnstonportraits.com', 'scottwjohnston.com', 'www.scottjohnstonportraits.com']
 
 
 # Application definition
@@ -130,10 +133,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT= '/var/www/html/dadsite/static'
+#STATIC_URL = '/newsite/static/'
+STATIC_ROOT= '/home/v9xm9e4lqiii/public_html/static'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/var/www/html/dadsite/media/'
+#MEDIA_URL = '/newsite/media/'
+MEDIA_ROOT = '/home/v9xm9e4lqiii/dadsite/media/'
 
 LOGGING = {
     'version': 1,
