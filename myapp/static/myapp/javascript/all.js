@@ -74,8 +74,6 @@ function notMobile() {
 // makes element change color briefly on mobile
 function touchStart(el, color2, color1) {
   el.style.color = color2;
-  console.log(el);
-  console.log(el.style.color);
   setTimeout(function() {
     el.style.color = color1;
   }, 300);
