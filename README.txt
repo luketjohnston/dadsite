@@ -46,3 +46,8 @@ sudo chown www-data:www-data db.sqlite3
 
 TO get working on cpanel:
 downgrade django to 2.0.7 (the sqlite version wasn't high enough on cpanel for newer versions of django)
+
+Had to install pillow as root user
+sudo su
+pip3 install pillow
+This is stupid, should get virtualenv working for future projects
