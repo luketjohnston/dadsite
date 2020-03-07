@@ -141,7 +141,7 @@ svg {
   height: 12px;
   width: 12px;
   position: relative;
-  top: -2px;
+  //top: -2px;
   //fill: #cdb9b0;
   fill: #444;
 }
