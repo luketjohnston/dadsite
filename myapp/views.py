@@ -38,7 +38,6 @@ def portrait(request):
 
 
 def view_404(request, exception=None):
-    print('herhewkkrejwlr')
     logger.error('IN VIEW 404')
     return redirect('/') 
 

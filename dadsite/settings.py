@@ -32,7 +32,7 @@ SECRET_KEY = 'e82&oc=ulchvns*ntl1n^n50^t8-qk@z91zd$2!92ybixor5lb'
 #SECURE_HSTS_PRELOAD = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['35.222.14.6', '127.0.0.1']
 
@@ -142,7 +142,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/Users/lukejohnston/Desktop/dadsite/log.txt',
+            'filename': '/var/www/html/dadsite/log.txt',
         },
     },
     'loggers': {
