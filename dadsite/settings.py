@@ -20,10 +20,19 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'vzf5q++f8ih4b0!^!ow5ukbl@*5)@!yvp3%jg2o(v!k3@6w6r7'
+SECRET_KEY = 'e82&oc=ulchvns*ntl1n^n50^t8-qk@z91zd$2!92ybixor5lb'
+
+# COMMENT OUT ALL OF THESE FOR DEPLOYMENT
+## security settings
+#SECURE_HSTS_SECONDS = 31536000
+#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+#SECURE_SSL_REDIRECT = True
+#SESSION_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
+#SECURE_HSTS_PRELOAD = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['35.222.14.6', '127.0.0.1']
 
@@ -133,7 +142,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/var/www/html/dadsite/log.txt',
+            'filename': '/Users/lukejohnston/Desktop/dadsite/log.txt',
         },
     },
     'loggers': {

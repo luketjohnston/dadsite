@@ -47,7 +47,6 @@ function setGalleryStyle() {
   }
 
   let numVisible = i - firstVisible;
-  console.log('numVisible:' + numVisible);
   if (numVisible % 2 === 1 || numVisible == 2) {
     galDiv.style.display = 'block';
     galDiv.style.width = 'auto';
@@ -81,7 +80,6 @@ function updateImageHeight() {
 
   // check if mobile version and if so don't run.
 
-  console.log('here')
   if (window.matchMedia("(max-width: 481px)").matches) {
     $('#gallery > a > img').css('height', 'auto');
     $('#gallery').css('height', 'auto');
@@ -95,9 +93,7 @@ function updateImageHeight() {
   let padding = 40;
 
   let galHeight = $('#gallery').height();
-  console.log('galHeight: ' + galHeight);
   let minTwoRowH = (minImgH + padding) * 2;
-  console.log('minTwoRowH: ' + minTwoRowH);
   let setHeight = 0;
   if (galHeight > minTwoRowH) {
     setHeight = Math.floor((galHeight - 2 * padding) / 2) - 1;
@@ -200,6 +196,44 @@ function previousClick() {
 Number.prototype.mod = function(n) {
     return ((this%n)+n)%n;
 };
+
+
+// taken from https://css-tricks.com/the-complete-guide-to-lazy-loading-images/
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyloadImages = document.querySelectorAll("img.lazy");    
+  var lazyloadThrottleTimeout;
+  
+  function lazyload () {
+
+    //only lazyload for mobile view
+    if (! window.matchMedia("(max-width: 481px)").matches) {
+      return;
+    }
+    
+    if(lazyloadThrottleTimeout) {
+      clearTimeout(lazyloadThrottleTimeout);
+    }    
+    
+    lazyloadThrottleTimeout = setTimeout(function() {
+        var scrollTop = window.pageYOffset;
+        lazyloadImages.forEach(function(img) {
+            if(img.offsetTop < (window.innerHeight + scrollTop)) {
+              img.src = img.dataset.src;
+              img.classList.remove('lazy');
+            }
+        });
+        if(lazyloadImages.length == 0) { 
+          document.removeEventListener("scroll", lazyload);
+          window.removeEventListener("resize", lazyload);
+          window.removeEventListener("orientationChange", lazyload);
+        }
+    }, 20);
+  }
+  
+  document.addEventListener("scroll", lazyload);
+  window.addEventListener("resize", lazyload);
+  window.addEventListener("orientationChange", lazyload);
+});
 
 
 
