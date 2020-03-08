@@ -51,3 +51,4 @@ Had to install pillow as root user
 sudo su
 pip3 install pillow
 This is stupid, should get virtualenv working for future projects
+

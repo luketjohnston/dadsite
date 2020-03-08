@@ -94,9 +94,8 @@ h1 {
 
 h1 img {
   padding: 20px;
-  /* It's not centered without this adjustment? maybe image doesn't have text centered */
-  padding-left: 23px;
-  width: 100%;
+  //padding-left: 23px;
+  width: calc(100% - 40px);
   max-width: 490px;
 }
 
@@ -133,14 +132,12 @@ a:visited {
 .icons > a:link {
   color: #444;
 }
-svg {
-  fill: #444;
-}
 
 svg {
   height: 12px;
   width: 12px;
-  position: relative;
+  margin: 0 auto;
+  //position: relative;
   //top: -2px;
   //fill: #cdb9b0;
   fill: #444;
@@ -188,6 +185,8 @@ svg {
 .icons > a {
     margin-left: 10px;
     margin-right: 10px;
+    display: flex;
+    align-items: center;
 }
  
 
